@@ -1,99 +1,378 @@
 'use client';
 
-import { useState } from 'react';
 import {
   ArrowUpRight,
   BookOpen,
-  BriefcaseBusiness,
-  Check,
-  ChevronDown,
-  Clock3,
+  Briefcase,
+  CheckCircle,
+  Clock,
+  Globe,
   GraduationCap,
-  HeartHandshake,
   MapPin,
   MessageCircle,
-  MoveRight,
-  Play,
-  Quote,
-  ShieldCheck,
   Sparkles,
+  Users,
+  Award,
+  ChevronRight,
 } from 'lucide-react';
+import Link from 'next/link';
 import { SiteFooter } from '../components/site-footer';
 import { SiteHeader } from '../components/site-header';
 
-const levels = [
-  { level: 'A1', title: 'Beginner', description: 'Start speaking with confidence.', tone: 'blue' },
-  { level: 'A2', title: 'Elementary', description: 'Make your everyday German flow.', tone: 'lime' },
-  { level: 'B1', title: 'Intermediate', description: 'Express ideas with independence.', tone: 'orange' },
-  { level: 'B2', title: 'Upper intermediate', description: 'Unlock work and study opportunities.', tone: 'navy' },
+const whyChooseUs = [
+  {
+    icon: Globe,
+    title: 'Flexible Online & Physical Classes',
+    description: 'Learn from anywhere in Kenya or join us in person in Kisumu.',
+  },
+  {
+    icon: Users,
+    title: 'Experienced, Learner-Centred Instructors',
+    description: 'Teachers who understand your goals and adapt to your pace.',
+  },
+  {
+    icon: Briefcase,
+    title: 'Full Ausbildung & Job Application Support',
+    description: 'We guide you beyond language to your career opportunities.',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Internationally Aligned Curriculum (A1–B2)',
+    description: 'CEFR-aligned training recognized globally.',
+  },
 ];
 
-const support = [
-  { icon: BriefcaseBusiness, title: 'Career pathways', text: 'Job & Ausbildung applications, employer connections, and the confidence to take your next step.' },
-  { icon: BookOpen, title: 'Application guidance', text: 'CV and motivation letter support that makes your experience stand out to German institutions.' },
-  { icon: ShieldCheck, title: 'Exam to visa support', text: 'From certification guidance to document and visa preparation, we help you navigate the details.' },
+const programs = [
+  {
+    title: 'Online Classes',
+    price: 'KES 10,000/month',
+    schedule: 'Daytime: 9 AM – 2 PM | Evening: 8 PM – 10 PM',
+    location: 'Join from Narok, Mombasa, or anywhere',
+    cta: 'Join Online Classes',
+    link: '/programs',
+  },
+  {
+    title: 'Physical Classes',
+    price: 'KES 12,000/month',
+    schedule: 'Flexible timing options',
+    location: 'Kisumu, Oginga Odinga Street',
+    cta: 'Visit Us in Kisumu',
+    link: '/locations',
+  },
+];
+
+const locations = [
+  {
+    name: 'Narok Online Class',
+    description: 'Live online sessions serving learners in Narok and surrounding areas',
+  },
+  {
+    name: 'Mombasa Online Class',
+    description: 'Live online sessions serving learners on the coast',
+  },
+  {
+    name: 'Kisumu Physical Location',
+    description: 'In-person classes, hands-on instructor support',
+  },
 ];
 
 export default function Home() {
-  const [faqOpen, setFaqOpen] = useState<number | null>(0);
-
   return (
-    <main>
+    <main className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-[#0367B4] selection:text-white">
       <SiteHeader />
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-dot" /> Kisumu & online · A1–B2</div>
-          <h1>Your next chapter<br /><em>starts in German.</em></h1>
-          <p>Practical, CEFR-aligned training for the people building a bigger future. Learn the language, find your confidence, and open the right doors.</p>
-          <div className="hero-actions">
-            <a href="#contact" className="button button-coral">Explore the journey <MoveRight size={17} /></a>
-            <a href="https://wa.me/254702562730" className="play-link"><span className="play-icon"><Play size={12} fill="currentColor" /></span> Talk to an advisor</a>
+      {/* Modern Split Hero Section */}
+      <section className="relative bg-white overflow-hidden pt-6 pb-16 lg:pt-12 lg:pb-24 border-b border-slate-100">
+        {/* Glow ambient backgrounds */}
+        <div className="absolute top-0 right-0 -z-10 w-[500px] h-[500px] bg-[#EAF4FB] rounded-full blur-3xl opacity-70 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-[#D6001C]/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+            {/* Left Content */}
+            <div className="lg:col-span-6 flex flex-col items-start space-y-8">
+
+              {/* Title */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0D2752] tracking-tight leading-[1.15]">
+                Empowering You to Speak German with{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0367B4] to-[#2795D3]">
+                  Confidence
+                </span>
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-xl">
+                CEFR-aligned German training preparing you for jobs, <strong>Ausbildung</strong>, and further university studies in Germany.
+              </p>
+
+              {/* Actions */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#D6001C] text-white font-bold text-base shadow-lg shadow-[#D6001C]/25 hover:bg-[#b50018] hover:shadow-xl hover:shadow-[#D6001C]/35 active:scale-[0.98] transition-all duration-200"
+                >
+                  <span>Start Your German Journey</span>
+                  <ArrowUpRight
+                    size={18}
+                    className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </Link>
+
+                <Link
+                  href="/programs"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white border-2 border-slate-200 text-[#0D2752] font-semibold text-base hover:bg-slate-50 hover:border-[#0367B4] hover:text-[#0367B4] active:scale-[0.98] transition-all duration-200"
+                >
+                  <span>View Programs</span>
+                </Link>
+              </div>
+
+              {/* Quick Trust Highlights */}
+              <div className="pt-4 grid grid-cols-2 gap-4 border-t border-slate-100 w-full">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#EAF4FB] flex items-center justify-center text-[#0367B4]">
+                    <Award size={18} />
+                  </div>
+                  <span className="text-xs font-semibold text-[#0D2752]">CEFR Standard</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
+                    <CheckCircle size={18} />
+                  </div>
+                  <span className="text-xs font-semibold text-[#0D2752]">Ausbildung Placement</span>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Right Hero Image Card */}
+            <div className="lg:col-span-6 relative">
+              <div className="relative mx-auto max-w-md lg:max-w-none">
+
+                {/* Visual Backdrop Frame */}
+                <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#0367B4] to-[#2795D3] opacity-20 blur-xl" />
+
+                {/* Hero Image Wrapper */}
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-2xl bg-white">
+                  <img
+                    src="/lakeview-teachers.jpg"
+                    alt="Lakeview German School Classroom"
+                    className="w-full h-[420px] sm:h-[480px] object-cover object-top hover:scale-105 transition-transform duration-500"
+                  />
+
+                  {/* Overlaid Floating Badge Top Right */}
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/40 shadow-lg flex items-center gap-2.5">
+                    <div className="w-3 h-3 rounded-full bg-emerald-500 animate-ping" />
+                    <span className="text-xs font-bold text-[#0D2752]">New Intake Ongoing</span>
+                  </div>
+
+                  {/* Overlaid Floating Card Bottom Left */}
+                  <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-[#0D2752]/95 backdrop-blur-md text-white p-4 rounded-xl border border-white/10 shadow-xl max-w-xs">
+                    <p className="text-xs font-medium text-slate-300">Classrooms & Online</p>
+                    <p className="text-sm font-bold text-white mt-0.5">Kisumu • Narok • Mombasa</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
-          <div className="hero-note"><div className="avatar-stack"><span>JM</span><span>AO</span><span>+</span></div><span>Join a growing community of future-ready learners</span></div>
-        </div>
-        <div className="hero-art" aria-label="Students learning together">
-          <div className="sun-disc" />
-          <div className="art-label label-top"><span className="label-icon"><Sparkles size={14} /></span><span>German, made<br /><strong>possible</strong></span></div>
-          <div className="art-window"><div className="window-sky" /><div className="window-horizon" /><div className="window-water" /><div className="window-figure figure-one" /><div className="window-figure figure-two" /></div>
-          <div className="art-card"><span className="mini-flag">DE</span><span><strong>Wort für Wort</strong><small>Build a global future</small></span><ArrowUpRight size={18} /></div>
-          <div className="scribble">∞</div>
-        </div>
-        <div className="hero-bottom"><span>Learning that moves with you</span><div className="hero-rule" /><span>01 / 04</span></div>
-      </section>
-
-      <section className="intro section-pad" id="about">
-        <div className="section-kicker">01 <span>Why LakeView</span></div>
-        <div className="intro-content">
-          <h2>German is more than a language.<br /><span>It&apos;s a way forward.</span></h2>
-          <div className="intro-aside"><p>At LakeView, we teach for the life beyond the classroom. Our learner-centred approach pairs experienced teaching with practical support, so you can move from your first <i>Hallo</i> to your next big opportunity.</p><a href="#support" className="text-link">See how we support you <ArrowUpRight size={16} /></a></div>
-        </div>
-        <div className="vision-strip"><div><span className="strip-number">A</span><strong>Accessible by design</strong><p>Flexible online and physical classes that fit your rhythm.</p></div><div><span className="strip-number">B</span><strong>Built for real life</strong><p>Practical German for work, study, travel, and everyday moments.</p></div><div><span className="strip-number">C</span><strong>Connected to opportunity</strong><p>A clear path from learning to your global future.</p></div></div>
-      </section>
-
-      <section className="journey section-pad" id="journey">
-        <div className="section-kicker light">02 <span>Your learning path</span></div>
-        <div className="journey-heading"><div><h2>One level at a time.<br /><em>A whole new world.</em></h2></div><p>Our CEFR-aligned programme takes you from A1 to B2 in eight focused months. No guesswork, just a steady path forward.</p></div>
-        <div className="level-grid">{levels.map((item, index) => <div className={`level-card ${item.tone}`} key={item.level}><div className="level-top"><span>0{index + 1}</span><span>{index === 0 ? 'Start here' : index === 3 ? 'Your goal' : 'Keep going'}</span></div><div className="level-code">{item.level}</div><div className="level-info"><strong>{item.title}</strong><p>{item.description}</p></div><div className="level-arrow"><ArrowUpRight size={18} /></div></div>)}</div>
-        <div className="journey-foot"><span><Clock3 size={17} /> 2 months per level</span><span><GraduationCap size={18} /> 8 months A1–B2</span><a href="#contact">View programme details <ArrowUpRight size={15} /></a></div>
-      </section>
-
-      <section className="offer section-pad" id="support">
-        <div className="section-kicker">03 <span>More than lessons</span></div>
-        <div className="offer-heading"><h2>Learning that<br /><span>takes you further.</span></h2><div className="offer-intro"><p>The right language skills can change the shape of your future. We stay close from your first class through to the opportunity you&apos;re working toward.</p><div className="stamp">LEARN<br /><span>+</span> GROW</div></div></div>
-        <div className="support-grid">{support.map(({ icon: Icon, title, text }, index) => <article className="support-card" key={title}><div className="support-icon"><Icon size={21} /></div><span className="support-index">0{index + 1}</span><h3>{title}</h3><p>{text}</p><a href="#contact" aria-label={`Learn more about ${title}`}><ArrowUpRight size={18} /></a></article>)}</div>
-      </section>
-
-      <section className="pricing section-pad">
-        <div className="pricing-card">
-          <div className="pricing-copy"><div className="section-kicker light">04 <span>Choose your pace</span></div><h2>Make space for<br /><em>what&apos;s next.</em></h2><p>Whether you learn from home or in the heart of Kisumu, your next level is closer than you think.</p><div className="pricing-contact"><span>Have a question?</span><a href="tel:+254702562730">Call 0702 562 730 <ArrowUpRight size={15} /></a></div></div>
-          <div className="price-options"><div className="price-option"><div className="price-icon"><MessageCircle size={20} /></div><div><span>Online classes</span><strong>KES 10,000 <small>/ month</small></strong><p>Daytime 9 AM–2 PM<br />Evening 8 PM–10 PM</p></div></div><div className="price-option featured"><div className="price-icon"><MapPin size={20} /></div><div><span>Physical classes</span><strong>KES 12,000 <small>/ month</small></strong><p>Kisumu, Oginga Odinga Street<br />Learn together, in person</p></div></div><a className="button button-light price-button" href="#contact">Find your class <ArrowUpRight size={16} /></a></div>
         </div>
       </section>
 
-      <section className="contact section-pad" id="contact">
-        <div className="contact-inner"><div className="contact-badge"><HeartHandshake size={18} /> Your future is worth the first step</div><h2>Ready to say<br /><em>“Ich bin bereit”?</em></h2><p>Send us a message and we&apos;ll help you find the right level, schedule, and next step.</p><div className="contact-actions"><a href="https://wa.me/254702562730" className="button button-coral"><MessageCircle size={17} /> WhatsApp us</a><a href="tel:+254103390866" className="button button-outline">Call 0103 390 866 <ArrowUpRight size={16} /></a></div></div>
-        <div className="faq"><span className="faq-label">Good to know</span>{['Do I need prior German experience?', 'When can I join a class?', 'Are certificates provided?'].map((question, index) => <div className={`faq-item ${faqOpen === index ? 'open' : ''}`} key={question}><button onClick={() => setFaqOpen(faqOpen === index ? null : index)}><span>0{index + 1}</span>{question}<ChevronDown size={17} /></button>{faqOpen === index && <p>{index === 0 ? 'No. We welcome complete beginners at A1 and place continuing learners at the right level.' : index === 1 ? 'Reach out anytime and our advisor will share the next available online and physical class intakes.' : 'We guide you toward the right exam and certification pathway for your study or career goals.'}</p>}</div>)}</div>
+      {/* Trust Strip */}
+      <section className="bg-[#0D2752] text-white py-6 border-y border-[#0367B4]/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <CheckCircle className="text-[#2795D3] shrink-0" size={22} />
+              <span className="text-sm font-medium tracking-wide">CEFR-Aligned</span>
+            </div>
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <Globe className="text-[#2795D3] shrink-0" size={22} />
+              <span className="text-sm font-medium tracking-wide">Online & Physical Classes</span>
+            </div>
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <Briefcase className="text-[#2795D3] shrink-0" size={22} />
+              <span className="text-sm font-medium tracking-wide">Job & Ausbildung Support</span>
+            </div>
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <MapPin className="text-[#2795D3] shrink-0" size={22} />
+              <span className="text-sm font-medium tracking-wide">Kisumu-Based, Africa-Wide</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Intro Section */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0367B4]">Welcome</span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2752] tracking-tight">
+                Welcome to Lakeview German School
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-base sm:text-lg">
+                We offer CEFR-aligned German training from A1 to B2 — preparing you for jobs, Ausbildung, and further studies in Germany. Learn German. Open doors. Build your future.
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+              <img
+                src="/lakeview-teachers.jpg"
+                alt="Students in classroom setting"
+                className="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 lg:py-24 bg-[#EAF4FB]/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0367B4]">Why Choose Us</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2752] mt-1">
+              What Sets Lakeview Apart
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyChooseUs.map((feature, index) => (
+              <div
+                className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow"
+                key={index}
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#EAF4FB] text-[#0367B4] flex items-center justify-center mb-5">
+                  <feature.icon size={26} />
+                </div>
+                <h3 className="text-lg font-bold text-[#0D2752] mb-2">{feature.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Snapshot */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0367B4]">Our Programs</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2752] mt-1">
+              Choose Your Learning Format
+            </h2>
+            <p className="text-slate-600 mt-2">Online from anywhere, or in person in Kisumu</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {programs.map((program, index) => (
+              <div
+                className="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col justify-between hover:border-[#0367B4] transition-colors"
+                key={index}
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-[#0367B4] text-white flex items-center justify-center mb-4">
+                    {index === 0 ? <Globe size={24} /> : <MapPin size={24} />}
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-[#0D2752]">{program.title}</h3>
+                  <div className="text-xl font-bold text-[#D6001C] mt-1">{program.price}</div>
+                  <p className="text-sm font-medium text-slate-700 mt-4">{program.schedule}</p>
+                  <p className="text-sm text-slate-500 mt-1">{program.location}</p>
+                </div>
+                <div className="pt-6 mt-6 border-t border-slate-200">
+                  <Link
+                    href={program.link}
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 px-5 rounded-xl border border-[#0D2752] text-[#0D2752] font-semibold hover:bg-[#0D2752] hover:text-white transition-colors"
+                  >
+                    <span>{program.cta}</span>
+                    <ArrowUpRight size={16} />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Reach Section */}
+      <section className="py-16 lg:py-24 bg-[#EAF4FB]/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0367B4]">Our Reach</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2752] mt-1">
+              Reaching Learners Across Kenya
+            </h2>
+            <p className="text-slate-600 mt-2">Wherever you are, Lakeview German School comes to you</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {locations.map((location, index) => (
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm" key={index}>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-[#EAF4FB] text-[#0367B4]">
+                    <MapPin size={20} />
+                  </div>
+                  <h3 className="font-bold text-[#0D2752]">{location.name}</h3>
+                </div>
+                <p className="text-sm text-slate-600">{location.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Student Life */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0367B4]">Student Life</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2752] mt-1">
+              Join Our Growing Community
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[1, 2, 3].map((item) => (
+              <div key={item} className="rounded-2xl overflow-hidden shadow-md border border-slate-100">
+                <img
+                  src={`/student-${item}.jpg`}
+                  alt={`Student life photo ${item}`}
+                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-300 text-[#0D2752] font-semibold hover:border-[#0367B4] hover:text-[#0367B4] transition-colors"
+            >
+              <span>See more of student life</span>
+              <ArrowUpRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Banner */}
+      <section className="py-16 bg-[#0D2752] text-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+            Your Germany Journey Starts Here
+          </h2>
+          <p className="text-slate-300 font-medium">
+            Call/WhatsApp: 0702 562 730 | 0103 390 866
+          </p>
+          <div>
+            <a
+              href="https://wa.me/254702562730?text=Hi,%20I'd%20like%20to%20know%20more%20about%20German%20classes%20at%20Lakeview%20German%20School"
+              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#D6001C] text-white font-bold shadow-lg hover:bg-[#b50018] active:scale-95 transition-all"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle size={20} />
+              <span>Chat with us on WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       <SiteFooter />

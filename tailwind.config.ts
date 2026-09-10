@@ -8,15 +8,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: '#0d2752',
-        lake: '#2596be',
-        sky: '#2795d3',
-        mist: '#eaf7fb',
-        coral: '#e85d4a',
+        primary: {
+          navy: '#0D2752',
+          blue: '#0367B4',
+        },
+        secondary: {
+          blue: '#2795D3',
+        },
+        accent: {
+          red: '#D6001C',
+        },
+        white: '#FDFDFD',
+        'pale-blue': '#EAF4FB',
       },
       fontFamily: {
-        sans: ['var(--font-manrope)', 'sans-serif'],
-        display: ['var(--font-space-grotesk)', 'sans-serif'],
+        sans: ['var(--font-inter)', 'sans-serif'],
+        display: ['var(--font-sora)', 'sans-serif'],
       },
     },
   },

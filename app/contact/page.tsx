@@ -1,14 +1,161 @@
 'use client';
 
-import { ArrowUpRight, Clock3, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { SiteFooter } from '../../components/site-footer';
 import { SiteHeader } from '../../components/site-header';
-import { Button } from '../../components/ui/button';
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); setSent(true); };
 
-  return <main><SiteHeader /><section className="contact-page section-pad"><div className="contact-page-heading"><div className="eyebrow"><span className="eyebrow-dot" /> We&apos;re here to help</div><h1>Start with a<br /><em>conversation.</em></h1><p>Tell us where you want to go. We&apos;ll help you find the level, schedule, and path that fits.</p><div className="contact-details"><a href="https://wa.me/254702562730"><MessageCircle size={18} /><span><small>WhatsApp</small>0702 562 730</span><ArrowUpRight size={15} /></a><a href="mailto:hello@lakeviewgerman.school"><Mail size={18} /><span><small>Email</small>hello@lakeviewgerman.school</span><ArrowUpRight size={15} /></a><div><MapPin size={18} /><span><small>Visit us</small>Oginga Odinga Street, Kisumu</span></div></div></div><form className="contact-form" onSubmit={handleSubmit}>{sent ? <div className="form-success"><span>✓</span><h2>Message received.</h2><p>Thanks for reaching out. Our team will be in touch shortly.</p><button type="button" className="text-link" onClick={() => setSent(false)}>Send another message <ArrowUpRight size={15} /></button></div> : <><div className="form-heading"><span>01 / Say hello</span><h2>What&apos;s on your mind?</h2></div><label>Name<input name="name" required placeholder="Your name" /></label><label>Email<input name="email" type="email" required placeholder="you@example.com" /></label><label>What would you like help with?<select name="topic" defaultValue=""><option value="" disabled>Select an option</option><option>Choosing my level</option><option>Class schedules</option><option>Exam preparation</option><option>Study or career pathway</option></select></label><label>Message<textarea name="message" required placeholder="Tell us a little about your goals..." rows={4} /></label><Button variant="coral" type="submit">Send message <ArrowUpRight size={16} /></Button></>}</form></section><section className="contact-hours"><div><Clock3 size={19} /><span><b>Office hours</b>Monday–Friday, 8:00 AM–5:00 PM</span></div><div><Phone size={19} /><span><b>Prefer a call?</b><a href="tel:+254103390866">0103 390 866 <ArrowUpRight size={14} /></a></span></div></section><SiteFooter /></main>;
+  return (
+    <main>
+      <SiteHeader />
+
+      {/* Hero Section */}
+      <section className="page-hero">
+        <div className="page-hero-content">
+          <div className="section-kicker">Contact & Enroll</div>
+          <h1>Start Your German Journey Today</h1>
+          <p>Get in touch to enroll or learn more about our programs</p>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="contact-section section-pad">
+        <div className="contact-grid">
+          {/* Contact Details */}
+          <div className="contact-info">
+            <h2>Get in Touch</h2>
+            <p>We're here to help you find the right German learning path.</p>
+            
+            <div className="contact-details-list">
+              <a href="https://wa.me/254702562730?text=Hi, I'd like to know more about German classes at Lakeview German School" target="_blank" rel="noopener noreferrer" className="contact-item">
+                <MessageCircle size={20} />
+                <div>
+                  <small>WhatsApp</small>
+                  <span>0702 562 730</span>
+                </div>
+                <ArrowUpRight size={16} />
+              </a>
+              
+              <a href="tel:+254103390866" className="contact-item">
+                <Phone size={20} />
+                <div>
+                  <small>Call</small>
+                  <span>0103 390 866</span>
+                </div>
+                <ArrowUpRight size={16} />
+              </a>
+              
+              <a href="mailto:hello@lakeviewgerman.school" className="contact-item">
+                <Mail size={20} />
+                <div>
+                  <small>Email</small>
+                  <span>hello@lakeviewgerman.school</span>
+                </div>
+                <ArrowUpRight size={16} />
+              </a>
+              
+              <div className="contact-item">
+                <MapPin size={20} />
+                <div>
+                  <small>Visit us</small>
+                  <span>Oginga Odinga Street, Kisumu</span>
+                </div>
+              </div>
+            </div>
+
+            {/* WhatsApp CTA */}
+            <div className="whatsapp-cta">
+              <a
+                href="https://wa.me/254702562730?text=Hi, I'd like to know more about German classes at Lakeview German School"
+                className="button button-accent-red whatsapp-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle size={18} />
+                Chat with us on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          {/* Enrollment Form */}
+          <div className="enrollment-form">
+            {sent ? (
+              <div className="form-success">
+                <span className="success-icon">✓</span>
+                <h2>Enrollment Request Received</h2>
+                <p>Thanks for your interest! Our team will be in touch shortly to help you get started.</p>
+                <button type="button" className="text-link" onClick={() => setSent(false)}>
+                  Submit another request <ArrowUpRight size={16} />
+                </button>
+              </div>
+            ) : (
+              <>
+                <div className="form-heading">
+                  <span>Enrollment Form</span>
+                  <h2>Tell Us About Yourself</h2>
+                  <p>Fill out this form and we'll help you find the perfect class</p>
+                </div>
+                
+                <form onSubmit={handleSubmit}>
+                  <label>
+                    Full Name
+                    <input name="name" required placeholder="Your full name" />
+                  </label>
+                  
+                  <label>
+                    Phone Number
+                    <input name="phone" type="tel" required placeholder="07XX XXX XXX" />
+                  </label>
+                  
+                  <label>
+                    Preferred Format
+                    <select name="format" required defaultValue="">
+                      <option value="" disabled>Select an option</option>
+                      <option value="online">Online Classes</option>
+                      <option value="physical">Physical Classes (Kisumu)</option>
+                    </select>
+                  </label>
+                  
+                  <label>
+                    Preferred Schedule
+                    <select name="schedule" required defaultValue="">
+                      <option value="" disabled>Select an option</option>
+                      <option value="daytime">Daytime (9 AM – 2 PM)</option>
+                      <option value="evening">Evening (8 PM – 10 PM)</option>
+                    </select>
+                  </label>
+                  
+                  <label>
+                    Current Level
+                    <select name="level" required defaultValue="">
+                      <option value="" disabled>Select an option</option>
+                      <option value="beginner">Beginner (No prior knowledge)</option>
+                      <option value="a1">A1 (Beginner)</option>
+                      <option value="a2">A2 (Elementary)</option>
+                      <option value="b1">B1 (Intermediate)</option>
+                    </select>
+                  </label>
+                  
+                  <label>
+                    Message (Optional)
+                    <textarea name="message" placeholder="Tell us about your goals or any questions..." rows={4} />
+                  </label>
+                  
+                  <button type="submit" className="button button-accent-red form-submit">
+                    Submit Enrollment Request <ArrowUpRight size={16} />
+                  </button>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <SiteFooter />
+    </main>
+  );
 }

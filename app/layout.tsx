@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import { Manrope, Space_Grotesk } from 'next/font/google';
+import { Inter, Sora } from 'next/font/google';
 import './globals.css';
+import { WhatsAppFloat } from '../components/whatsapp-float';
 
-const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' });
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const sora = Sora({ subsets: ['latin'], variable: '--font-sora' });
 
 export const metadata: Metadata = {
   title: 'LakeView German School | Learn German. Open Doors.',
@@ -33,8 +34,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${spaceGrotesk.variable}`}>
+      <body className={`${inter.variable} ${sora.variable}`}>
         {children}
+        <WhatsAppFloat />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
