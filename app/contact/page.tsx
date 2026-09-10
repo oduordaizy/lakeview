@@ -1,0 +1,14 @@
+'use client';
+
+import { ArrowUpRight, Clock3, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { FormEvent, useState } from 'react';
+import { SiteFooter } from '../../components/site-footer';
+import { SiteHeader } from '../../components/site-header';
+import { Button } from '../../components/ui/button';
+
+export default function ContactPage() {
+  const [sent, setSent] = useState(false);
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); setSent(true); };
+
+  return <main><SiteHeader /><section className="contact-page section-pad"><div className="contact-page-heading"><div className="eyebrow"><span className="eyebrow-dot" /> We&apos;re here to help</div><h1>Start with a<br /><em>conversation.</em></h1><p>Tell us where you want to go. We&apos;ll help you find the level, schedule, and path that fits.</p><div className="contact-details"><a href="https://wa.me/254702562730"><MessageCircle size={18} /><span><small>WhatsApp</small>0702 562 730</span><ArrowUpRight size={15} /></a><a href="mailto:hello@lakeviewgerman.school"><Mail size={18} /><span><small>Email</small>hello@lakeviewgerman.school</span><ArrowUpRight size={15} /></a><div><MapPin size={18} /><span><small>Visit us</small>Oginga Odinga Street, Kisumu</span></div></div></div><form className="contact-form" onSubmit={handleSubmit}>{sent ? <div className="form-success"><span>✓</span><h2>Message received.</h2><p>Thanks for reaching out. Our team will be in touch shortly.</p><button type="button" className="text-link" onClick={() => setSent(false)}>Send another message <ArrowUpRight size={15} /></button></div> : <><div className="form-heading"><span>01 / Say hello</span><h2>What&apos;s on your mind?</h2></div><label>Name<input name="name" required placeholder="Your name" /></label><label>Email<input name="email" type="email" required placeholder="you@example.com" /></label><label>What would you like help with?<select name="topic" defaultValue=""><option value="" disabled>Select an option</option><option>Choosing my level</option><option>Class schedules</option><option>Exam preparation</option><option>Study or career pathway</option></select></label><label>Message<textarea name="message" required placeholder="Tell us a little about your goals..." rows={4} /></label><Button variant="coral" type="submit">Send message <ArrowUpRight size={16} /></Button></>}</form></section><section className="contact-hours"><div><Clock3 size={19} /><span><b>Office hours</b>Monday–Friday, 8:00 AM–5:00 PM</span></div><div><Phone size={19} /><span><b>Prefer a call?</b><a href="tel:+254103390866">0103 390 866 <ArrowUpRight size={14} /></a></span></div></section><SiteFooter /></main>;
+}
