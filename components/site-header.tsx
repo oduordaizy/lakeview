@@ -42,16 +42,16 @@ export function SiteHeader() {
             <Link
               href="/"
               onClick={closeMenu}
-              className="group flex items-center gap-3 transition-transform active:scale-[0.98]"
+              className="group flex items-center gap-1 transition-transform active:scale-[0.98]"
             >
               <img
                 src="/logo.jpg"
-                alt="LakeView German School Logo"
+                alt="Lakeview German School Logo"
                 className="w-14 h-14 object-contain"
               />
               <div className="flex flex-col">
                 <span className="text-lg font-extrabold text-[#0D2752] tracking-tight leading-none group-hover:text-[#0367B4] transition-colors">
-                  LakeView
+                  Lakeview
                 </span>
                 <span className="text-xs font-semibold text-[#0367B4] tracking-wide mt-0.5">
                   German School
