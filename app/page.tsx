@@ -198,7 +198,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center md:justify-start gap-3">
               <MapPin className="text-[#2795D3] shrink-0" size={22} />
-              <span className="text-sm font-medium tracking-wide">Kisumu-Based, Africa-Wide</span>
+              <span className="text-sm font-medium tracking-wide">Kisumu-Based, Global Reach</span>
             </div>
           </div>
         </div>
