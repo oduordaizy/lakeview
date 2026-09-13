@@ -82,7 +82,7 @@ export default function Home() {
       <SiteHeader />
 
       {/* Modern Split Hero Section */}
-      <section className="relative bg-white overflow-hidden pt-6 pb-16 lg:pt-12 lg:pb-24 border-b border-slate-100">
+      <section className="relative bg-white overflow-hidden pt-1 pb-16 lg:pt-12 lg:pb-24 border-b border-slate-100">
         {/* Glow ambient backgrounds */}
         <div className="absolute top-0 right-0 -z-10 w-[500px] h-[500px] bg-[#EAF4FB] rounded-full blur-3xl opacity-70 pointer-events-none" />
         <div className="absolute bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-[#D6001C]/5 rounded-full blur-3xl pointer-events-none" />
@@ -153,9 +153,9 @@ export default function Home() {
                 <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#0367B4] to-[#2795D3] opacity-20 blur-xl" />
 
                 {/* Hero Image Wrapper */}
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-2xl bg-white">
+                <div className="relative overflow-hidden ">
                   <img
-                    src="/lakeview-teachers.jpg"
+                    src="/hero2.png"
                     alt="Lakeview German School Classroom"
                     className="w-full h-[420px] sm:h-[480px] object-cover object-top hover:scale-105 transition-transform duration-500"
                   />
@@ -169,7 +169,7 @@ export default function Home() {
                   {/* Overlaid Floating Card Bottom Left */}
                   <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-[#0D2752]/95 backdrop-blur-md text-white p-4 rounded-xl border border-white/10 shadow-xl max-w-xs">
                     <p className="text-xs font-medium text-slate-300">Classrooms & Online</p>
-                    <p className="text-sm font-bold text-white mt-0.5">Kisumu • Narok • Mombasa</p>
+                    <p className="text-sm font-bold text-white mt-0.5">• Nairobi • Kisumu • Eldoret • Narok • Mombasa</p>
                   </div>
                 </div>
 

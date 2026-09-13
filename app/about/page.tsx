@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 };
 
 const coreValues = [
-  { icon: '★', title: 'Excellence' },
-  { icon: '★', title: 'Discipline' },
-  { icon: '★', title: 'Integrity' },
-  { icon: '★', title: 'Student-Centred Learning' },
-  { icon: '★', title: 'Cultural Awareness' },
-  { icon: '★', title: 'Innovation & Growth' },
-  { icon: '★', title: 'Community & Support' },
-  { icon: '★', title: 'Results & Accountability' },
+  { icon: '★', title: 'Excellence', description: 'Delivering the highest quality German language education' },
+  { icon: '★', title: 'Discipline', description: 'Fostering commitment and consistent learning habits' },
+  { icon: '★', title: 'Integrity', description: 'Upholding honesty and ethical practices in all we do' },
+  { icon: '★', title: 'Student-Centred Learning', description: 'Tailoring education to individual learner needs' },
+  { icon: '★', title: 'Cultural Awareness', description: 'Embracing German culture and cross-cultural understanding' },
+  { icon: '★', title: 'Innovation & Growth', description: 'Continuously improving our teaching methods and programs' },
+  { icon: '★', title: 'Community & Support', description: 'Building a supportive learning environment for all' },
+  { icon: '★', title: 'Results & Accountability', description: 'Measuring success through student achievements' },
 ];
 
 export default function AboutPage() {
@@ -40,11 +40,11 @@ export default function AboutPage() {
           <div className="section-kicker">Our Story</div>
           <h2>Why Lakeview German School</h2>
           <p>
-            Lakeview German School was founded with a clear mission: to make quality German language education accessible to learners in Kenya and beyond. 
+            Lakeview German School was founded with a clear mission: to make quality German language education accessible to learners in Kenya and beyond.
             We chose Kisumu as our home base because of its strategic location and vibrant community, but our reach extends far beyond through our online programs.
           </p>
           <p>
-            We believe that learning German is more than acquiring a new language—it's opening doors to education, employment, cultural exchange, and new opportunities. 
+            We believe that learning German is more than acquiring a new language—it's opening doors to education, employment, cultural exchange, and new opportunities.
             Our learner-centred approach combines experienced instructors with practical, real-world applications to ensure every student achieves their goals.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
         </div>
         <div className="mission-text">
           <p>
-            To provide accessible, high-quality and practical German language education that equips learners with the communication skills, confidence, 
+            To provide accessible, high-quality and practical German language education that equips learners with the communication skills, confidence,
             and knowledge needed to succeed in academic, professional, and everyday environments in Germany and the wider German-speaking world.
           </p>
         </div>
@@ -84,8 +84,8 @@ export default function AboutPage() {
         </div>
         <div className="stand-for-text">
           <p>
-            At Lakeview, we believe in learner-centred teaching that adapts to your needs. Our experienced instructors bring years of expertise 
-            to every class, while our flexible online and physical options ensure you can learn on your terms. From A1 foundations to B2 fluency, 
+            At Lakeview, we believe in learner-centred teaching that adapts to your needs. Our experienced instructors bring years of expertise
+            to every class, while our flexible online and physical options ensure you can learn on your terms. From A1 foundations to B2 fluency,
             our CEFR-aligned curriculum prepares you for real success.
           </p>
         </div>
@@ -102,6 +102,7 @@ export default function AboutPage() {
             <div className="value-card" key={index}>
               <span className="value-icon">{value.icon}</span>
               <h3>{value.title}</h3>
+              <p className="value-description">{value.description}</p>
             </div>
           ))}
         </div>

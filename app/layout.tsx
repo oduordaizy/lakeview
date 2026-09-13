@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   authors: [{ name: 'LakeView German School' }],
   creator: 'LakeView German School',
   alternates: { canonical: '/' },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_KE',

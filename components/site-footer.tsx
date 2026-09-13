@@ -1,13 +1,13 @@
 'use client';
 
-import { Facebook, Instagram, Mail, MapPin, MessageCircle, Phone, Clock } from 'lucide-react';
+import { Facebook, Instagram, Mail, MapPin, MessageCircle, Phone, Clock, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 
 export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0D2752] text-white relative overflow-hidden pt-16 pb-8 border-t-4 border-[#0367B4]">
+    <footer className="bg-[#0D2752] text-white relative overflow-hidden pt-10 pb-6 border-t-4 border-[#0367B4]">
       {/* Decorative background glows */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0367B4]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#D6001C]/10 rounded-full blur-3xl pointer-events-none" />
@@ -61,7 +61,7 @@ export function SiteFooter() {
 
           {/* SECTION 2: Quick Links (3 Cols on Desktop) */}
           <div className="lg:col-span-3 flex flex-col gap-4">
-            <h3 className="font-bold tracking-wider text-white flex items-center gap-2">
+            <h3 className="font-bold tracking-wider text-secondary-blue flex items-center gap-2">
               Quick Links
             </h3>
             <ul className="flex flex-col gap-2 text-sm">
@@ -100,7 +100,7 @@ export function SiteFooter() {
 
           {/* SECTION 3: Contact Us (3 Cols on Desktop) */}
           <div className="lg:col-span-3 flex flex-col gap-4">
-            <h3 className="font-bold tracking-wider text-white flex items-center gap-2">
+            <h3 className="font-bold tracking-wider text-secondary-blue flex items-center gap-2">
               Contact Us
             </h3>
             <div className="flex flex-col gap-2.5 text-sm text-slate-300">
@@ -185,33 +185,57 @@ export function SiteFooter() {
           <div className="flex items-center gap-3">
             <span className="text-xs text-slate-400 font-medium mr-1">Socials:</span>
             <a
-              href="#"
+              href="https://web.facebook.com/p/Lakeview-German-School-61586087463545/?_rdc=1&_rdr#"
               aria-label="Facebook"
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#0367B4] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2795D3] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
             >
               <Facebook size={16} />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/lv_german_school/"
               aria-label="Instagram"
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#D6001C] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2795D3] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
             >
               <Instagram size={16} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lakeview-german-school-535b28409/"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2795D3] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
+            >
+              <Linkedin size={16} />
+            </a>
+            <a
+              href="https://www.tiktok.com/@lvgermanschool/photo/7633872125035711764"
+              aria-label="TikTok"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2795D3] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
             </a>
             <a
               href="https://wa.me/254702562730"
               aria-label="WhatsApp"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-emerald-600 flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
+              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2795D3] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
             >
               <MessageCircle size={16} />
             </a>
           </div>
 
           {/* Copyright notice */}
-          <div className="text-xs text-slate-400 text-center md:text-right">
-            <span>© {currentYear} Lakeview German School. All rights reserved.</span>
+          <div className="text-xs text-white text-center md:text-right">
+            <span> {currentYear} Lakeview German School. All rights reserved.</span>
           </div>
           
         </div>
