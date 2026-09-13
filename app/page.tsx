@@ -217,9 +217,9 @@ export default function Home() {
                 We offer CEFR-aligned German training from A1 to B2 — preparing you for jobs, Ausbildung, and further studies in Germany. Learn German. Open doors. Build your future.
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+            <div className="overflow-hidden">
               <img
-                src="/lakeview-teachers.jpg"
+                src="/lv-teachers.png"
                 alt="Students in classroom setting"
                 className="w-full h-80 object-cover"
               />
