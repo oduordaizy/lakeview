@@ -47,7 +47,7 @@ export function SiteHeader() {
               <img
                 src="/logo.jpg"
                 alt="Lakeview German School Logo"
-                className="w-14 h-14 object-contain"
+                className="w-30 h-20 object-contain"
               />
               <div className="flex flex-col">
                 <span className="text-lg font-extrabold text-[#0D2752] tracking-tight leading-none group-hover:text-[#0367B4] transition-colors">
