@@ -49,14 +49,14 @@ export function SiteHeader() {
                 alt="Lakeview German School Logo"
                 className="w-30 h-20 object-contain"
               />
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <span className="text-lg font-extrabold text-[#0D2752] tracking-tight leading-none group-hover:text-[#0367B4] transition-colors">
                   Lakeview
                 </span>
                 <span className="text-xs font-semibold text-[#0367B4] tracking-wide mt-0.5">
                   German School
                 </span>
-              </div>
+              </div> */}
             </Link>
 
             {/* Desktop Navigation Links */}

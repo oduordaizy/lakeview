@@ -31,10 +31,6 @@ const faqItems = [
     answer: 'We understand that life happens. We offer make-up sessions and provide access to recorded lessons (for online classes) so you can catch up on missed content. Your instructor will also provide materials to help you stay on track.',
   },
   {
-    question: 'Is the certificate recognized in Germany?',
-    answer: 'Yes. Our courses are CEFR-aligned, and we guide you toward official CEFR exams. The certificates from these exams are recognized by German institutions, employers, and visa authorities for study, work, and residence applications.',
-  },
-  {
     question: 'How do I pay for classes?',
     answer: 'We accept various payment methods including M-Pesa, bank transfers, and mobile money. Payment is made monthly at the beginning of each month. Contact us for specific payment details and instructions.',
   },
