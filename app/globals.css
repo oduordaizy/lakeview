@@ -3218,6 +3218,25 @@ footer {
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
+.value-card h3 {
+  color: #0d2752;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* Ensure the description text is visible with dark charcoal color */
+.value-card .value-description {
+  color: #475569;
+  /* Dark gray for strong readability */
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  display: block;
+  /* Guarantees it doesn't get hidden by display:none */
+}
+
 .value-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(13, 39, 82, 0.1);
