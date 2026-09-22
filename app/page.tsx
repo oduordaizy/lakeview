@@ -219,7 +219,7 @@ export default function Home() {
             </div>
             <div className="overflow-hidden">
               <img
-                src="/lv-teachers.png"
+                src="/lv-teacher.png"
                 alt="Students in classroom setting"
                 className="w-full h-80 object-cover"
               />
@@ -333,7 +333,7 @@ export default function Home() {
             {[1, 2, 3].map((item) => (
               <div key={item} className="rounded-2xl overflow-hidden shadow-md border border-slate-100">
                 <img
-                  src={`/student-${item}.jpg`}
+                  src={`/student-${item}.png`}
                   alt={`Student life photo ${item}`}
                   className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
                 />
