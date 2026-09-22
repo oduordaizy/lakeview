@@ -82,7 +82,7 @@ export default function Home() {
       <SiteHeader />
 
       {/* Modern Split Hero Section */}
-      <section className="relative bg-white overflow-hidden pt-1 pb-16 lg:pt-12 lg:pb-24 border-b border-slate-100">
+      <section className="relative bg-white overflow-hidden pt-4 pb-16 lg:pt-12 lg:pb-24 border-b border-slate-100">
         {/* Glow ambient backgrounds */}
         <div className="absolute top-0 right-0 -z-10 w-[500px] h-[500px] bg-[#EAF4FB] rounded-full blur-3xl opacity-70 pointer-events-none" />
         <div className="absolute bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-[#D6001C]/5 rounded-full blur-3xl pointer-events-none" />
