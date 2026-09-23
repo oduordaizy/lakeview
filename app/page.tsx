@@ -298,7 +298,7 @@ export default function Home() {
       <TeamSection />
 
       {/* Our Reach Section */}
-      <section className="py-16 lg:py-24 bg-[#EAF4FB]/50">
+      {/* <section className="py-16 lg:py-24 bg-[#EAF4FB]/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0367B4]">Our Reach</span>
@@ -321,7 +321,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Student Life */}
       <section className="py-16 lg:py-24 bg-white">
