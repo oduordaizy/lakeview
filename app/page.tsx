@@ -48,17 +48,17 @@ const programs = [
     title: 'Online Classes',
     price: 'KES 10,000/month',
     schedule: 'Daytime: 9 AM – 2 PM | Evening: 8 PM – 10 PM',
-    location: 'Join from Narok, Mombasa, or anywhere',
-    cta: 'Join Online Classes',
-    link: '/programs',
+    location: 'Join from anywhere globally',
+    cta: 'Enroll now',
+    link: '/contact',
   },
   {
     title: 'Physical Classes',
     price: 'KES 12,000/month',
     schedule: 'Flexible timing options',
     location: 'Kisumu, Oginga Odinga Street',
-    cta: 'Visit Us in Kisumu',
-    link: '/locations',
+    cta: 'Enroll Now',
+    link: '/contact',
   },
 ];
 
