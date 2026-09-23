@@ -32,36 +32,26 @@ export function SiteHeader() {
 
   return (
     <>
-      <header
-        className="sticky top-0 z-50 w-full bg-white border-b border-slate-100 py-0"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 py-1 transition-all">
+        <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
+          <div className="flex items-center justify-between h-16 sm:h-20 2xl:h-24">
 
             {/* Brand / Logo */}
             <Link
               href="/"
               onClick={closeMenu}
-              className="group flex items-center gap-1 transition-transform active:scale-[0.98]"
+              className="group flex items-center gap-2 transition-transform active:scale-[0.98] shrink-0"
             >
               <img
                 src="/logo.jpg"
                 alt="Lakeview German School Logo"
-                className="w-24 h-18 object-contain"
+                className="w-20 sm:w-24 2xl:w-28 h-auto object-contain transition-all"
               />
-              {/* <div className="flex flex-col">
-                <span className="text-lg font-extrabold text-[#0D2752] tracking-tight leading-none group-hover:text-[#0367B4] transition-colors">
-                  Lakeview
-                </span>
-                <span className="text-xs font-semibold text-[#0367B4] tracking-wide mt-0.5">
-                  German School
-                </span>
-              </div> */}
             </Link>
 
             {/* Desktop Navigation Links */}
             <nav
-              className="hidden lg:flex items-center gap-1 xl:gap-2"
+              className="hidden lg:flex items-center gap-1 xl:gap-2 2xl:gap-3"
               aria-label="Main navigation"
             >
               {links.map((link) => {
@@ -71,9 +61,9 @@ export function SiteHeader() {
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      'px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200',
+                      'px-3 py-2 xl:px-4 xl:py-2.5 2xl:px-5 2xl:py-2.5 rounded-lg text-sm xl:text-base 2xl:text-base font-medium transition-all duration-200',
                       isActive
-                        ? 'text-[#0367B4] font-semibold'
+                        ? 'text-[#0367B4] font-semibold bg-[#EAF4FB]/70'
                         : 'text-[#0D2752] hover:text-[#0367B4] hover:bg-[#EAF4FB]/60'
                     )}
                   >
@@ -84,15 +74,15 @@ export function SiteHeader() {
             </nav>
 
             {/* Desktop CTA Button */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden lg:flex items-center shrink-0">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#D6001C] text-white text-sm font-semibold shadow-md shadow-[#D6001C]/20 hover:bg-[#b50018] hover:shadow-lg hover:shadow-[#D6001C]/30 active:scale-95 transition-all duration-200"
+                className="group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 xl:px-6 xl:py-3 2xl:px-7 2xl:py-3.5 rounded-full bg-[#D6001C] text-white text-sm xl:text-base 2xl:text-base font-semibold shadow-md shadow-[#D6001C]/20 hover:bg-[#b50018] hover:shadow-lg hover:shadow-[#D6001C]/30 active:scale-95 transition-all duration-200"
               >
                 <span>Enroll Now</span>
                 <ArrowUpRight
                   size={16}
-                  className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="2xl:w-5 2xl:h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </Link>
             </div>
