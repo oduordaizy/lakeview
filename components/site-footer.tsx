@@ -1,245 +1,194 @@
-'use client';
+import React from 'react';
+import {
+  Clock,
+  MapPin,
+  Phone,
+  Mail,
+  MessageCircle,
+  ArrowUpRight,
+  Globe,
+  CheckCircle,
+  ChevronRight,
+  Sparkles,
+} from 'lucide-react';
 
-import { Facebook, Instagram, Mail, MapPin, MessageCircle, Phone, Clock, Linkedin } from 'lucide-react';
-import Link from 'next/link';
+const quickLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Programs & Pricing', href: '/programs' },
+  { label: 'Beyond Classroom', href: '/beyond-classroom' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact Us', href: '/contact' },
+];
+
+const programLinks = [
+  { label: 'A1 German Course', href: '/programs#a1' },
+  { label: 'A2 German Course', href: '/programs#a2' },
+  { label: 'B1 German Course', href: '/programs#b1' },
+  { label: 'B2 German Course', href: '/programs#b2' },
+  { label: 'Ausbildung & Career Prep', href: '/beyond-classroom' },
+  { label: 'Online Evening Classes', href: '/programs#online' },
+];
 
 export function SiteFooter() {
-  const currentYear = new Date().getFullYear();
+  const whatsappUrl =
+    'https://wa.me/254702562730?text=' +
+    encodeURIComponent(
+      "Hi, I'd like to know more about German classes at Lakeview German School"
+    );
 
   return (
-    <footer className="bg-[#0D2752] text-white relative overflow-hidden pt-10 pb-6 border-t-4 border-[#0367B4]">
-      {/* Decorative background glows */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0367B4]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#D6001C]/10 rounded-full blur-3xl pointer-events-none" />
+    <footer className="relative bg-[#0D2752] text-white overflow-hidden pt-16 pb-8 sm:pt-20 lg:pt-24 2xl:pt-32">
+      {/* Background Decorative Ambient Glows */}
+      <div className="pointer-events-none absolute -top-40 -left-40 w-96 h-96 2xl:w-[600px] 2xl:h-[600px] rounded-full bg-[#0367B4]/20 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 right-0 w-96 h-96 2xl:w-[700px] 2xl:h-[700px] rounded-full bg-[#2795D3]/15 blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Main 4-Column Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+      {/* Main Container tailored for wide & ultra-wide screens */}
+      <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative z-10">
 
-          {/* SECTION 1: Logo & Brand Area (3 Cols on Desktop) */}
-          <div className="lg:col-span-3 flex flex-col gap-4 relative">
-          
+        {/* Top Grid Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 2xl:gap-16 pb-12 lg:pb-16 2xl:pb-20 border-b border-[#0367B4]/30">
 
-            {/* Logo + Brand Name */}
-            <Link href="/" className="inline-flex items-center gap-2 group pt-2">
-              <img
-                src="/logo.jpg"
-                alt="LakeView German School Logo"
-                className="w-12 h-12 object-contain rounded-xl bg-white p-1 shadow-md shadow-black/20 group-hover:scale-105 transition-transform"
-              />
-              <div className="flex flex-col">
-                <span className="text-xl font-extrabold text-white tracking-tight leading-none group-hover:text-[#2795D3] transition-colors">
-                  Lakeview
-                </span>
-                <span className="text-xs font-semibold text-[#2795D3] tracking-wider mt-0.5 uppercase">
-                  German School
-                </span>
+          {/* Column 1: Brand & Overview (4 cols on lg, 4 cols on 2xl) */}
+          <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
+            <div className="space-y-4 sm:space-y-5">
+              <div className="flex items-center gap-3">
+                <div className="bg-white p-2 rounded-xl shadow-md inline-block">
+                  <img
+                    src="/logo.jpg"
+                    alt="Lakeview German School Logo"
+                    className="w-16 h-12 sm:w-20 sm:h-14 2xl:w-24 2xl:h-16 object-contain"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl sm:text-2xl 2xl:text-3xl font-extrabold text-white tracking-tight">
+                    Lakeview
+                  </h3>
+                  <p className="text-xs sm:text-sm 2xl:text-base text-[#2795D3] font-semibold tracking-wider uppercase">
+                    German School
+                  </p>
+                </div>
               </div>
-            </Link>
 
-            <p className="text-slate-300 text-xs leading-relaxed">
-              Learn German. Open doors. Build your future. Premium language education in Kenya designed for global careers.
-            </p>
+              <p className="text-slate-300 text-sm sm:text-base 2xl:text-lg leading-relaxed max-w-md">
+                Empowering learners in Kenya and beyond to master German from A1 to B2. Prepare for certified exams, university studies, and career opportunities in Germany.
+              </p>
+            </div>
 
-            {/* WhatsApp Quick CTA */}
-            <div className="pt-1">
+            {/* Direct WhatsApp Callout Tag */}
+            <div className="pt-2">
               <a
-                href="https://wa.me/254702562730"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold hover:bg-emerald-500 hover:text-white transition-all duration-300"
+                className="group inline-flex items-center gap-2.5 px-5 py-3 2xl:px-7 2xl:py-4 rounded-full bg-[#D6001C] text-white font-bold text-xs sm:text-sm 2xl:text-base shadow-lg shadow-[#D6001C]/30 hover:bg-[#b50018] hover:shadow-xl transition-all duration-200 active:scale-95"
               >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                Chat on WhatsApp
+                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 2xl:w-6 2xl:h-6 fill-current" />
+                <span>Chat Directly on WhatsApp</span>
+                <ArrowUpRight className="w-4 h-4 2xl:w-5 2xl:h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>
           </div>
 
-          {/* SECTION 2: Quick Links (3 Cols on Desktop) */}
-          <div className="lg:col-span-3 flex flex-col gap-4">
-            <h3 className="font-bold tracking-wider text-secondary-blue flex items-center gap-2">
+          {/* Column 2: Quick Links (2 cols) */}
+          <div className="lg:col-span-2 space-y-4">
+            <h4 className="text-sm sm:text-base 2xl:text-lg font-bold text-white uppercase tracking-wider text-[#2795D3]">
               Quick Links
-            </h3>
-            <ul className="flex flex-col gap-2 text-sm">
-              <li>
-                <Link href="/" className="text-white hover:text-secondary-blue hover:translate-x-1 transition-all inline-block py-0.5">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-white hover:text-secondary-blue hover:translate-x-1 transition-all inline-block py-0.5">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/programs" className="text-white hover:text-secondary-blue hover:translate-x-1 transition-all inline-block py-0.5">
-                  Programs & Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/beyond-classroom" className="text-white hover:text-secondary-blue hover:translate-x-1 transition-all inline-block py-0.5">
-                  Beyond Classroom
-                </Link>
-              </li>
-              <li>
-                <Link href="/gallery" className="text-white hover:text-secondary-blue hover:translate-x-1 transition-all inline-block py-0.5">
-                  Gallery & Events
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-white hover:text-secondary-blue hover:translate-x-1 transition-all inline-block py-0.5">
-                  FAQ
-                </Link>
-              </li>
+            </h4>
+            <ul className="space-y-2.5 sm:space-y-3 2xl:space-y-4">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="group flex items-center text-sm sm:text-base 2xl:text-lg text-slate-300 hover:text-white transition-colors"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5 text-[#2795D3] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200 mr-1" />
+                    <span>{link.label}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* SECTION 3: Contact Us (3 Cols on Desktop) */}
-          <div className="lg:col-span-3 flex flex-col gap-4">
-            <h3 className="font-bold tracking-wider text-secondary-blue flex items-center gap-2">
-              Contact Us
-            </h3>
-            <div className="flex flex-col gap-2.5 text-sm text-slate-300">
-              <a
-                href="https://wa.me/254702562730"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2.5 p-2 rounded-xl bg-white/5 hover:bg-[#0367B4]/20 border border-white/5 hover:border-[#0367B4]/40 transition-all"
-              >
-                <div className="w-7 h-7 rounded-lg bg-[#0367B4]/20 flex items-center justify-center text-[#2795D3] group-hover:bg-[#0367B4] group-hover:text-white transition-colors">
-                  <MessageCircle size={14} />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] uppercase text-slate-400 font-medium">WhatsApp</span>
-                  <span className="font-semibold text-white text-xs">0702 562 730</span>
-                </div>
-              </a>
-
-              <a
-                href="tel:+254103390866"
-                className="group flex items-center gap-2.5 p-2 rounded-xl bg-white/5 hover:bg-[#0367B4]/20 border border-white/5 hover:border-[#0367B4]/40 transition-all"
-              >
-                <div className="w-7 h-7 rounded-lg bg-[#0367B4]/20 flex items-center justify-center text-[#2795D3] group-hover:bg-[#0367B4] group-hover:text-white transition-colors">
-                  <Phone size={14} />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] uppercase text-slate-400 font-medium">Phone</span>
-                  <span className="font-semibold text-white text-xs">0103 390 866</span>
-                </div>
-              </a>
-
-              <a
-                href="mailto:lakeviewgermanschool@gmail.com"
-                className="group flex items-center gap-2.5 p-2 rounded-xl bg-white/5 hover:bg-[#0367B4]/20 border border-white/5 hover:border-[#0367B4]/40 transition-all"
-              >
-                <div className="w-7 h-7 rounded-lg bg-[#0367B4]/20 flex items-center justify-center text-[#2795D3] group-hover:bg-[#0367B4] group-hover:text-white transition-colors">
-                  <Mail size={14} />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] uppercase text-slate-400 font-medium">Email</span>
-                  <span className="font-semibold text-white text-xs truncate max-w-[160px]">lakeviewgermanschool@gmail.com</span>
-                </div>
-              </a>
-            </div>
+          {/* Column 3: Programs (2 cols) */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="text-sm sm:text-base 2xl:text-lg font-bold text-white uppercase tracking-wider text-[#2795D3]">
+              Our Programs
+            </h4>
+            <ul className="space-y-2.5 sm:space-y-3 2xl:space-y-4">
+              {programLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="group flex items-center text-sm sm:text-base 2xl:text-lg text-slate-300 hover:text-white transition-colors"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5 text-[#2795D3] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200 mr-1" />
+                    <span>{link.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* SECTION 4: Location & Hours (3 Cols on Desktop) */}
-          <div className="lg:col-span-3 flex flex-col gap-4">
-            <h3 className="font-bold tracking-wider text-white flex items-center gap-2">
-              Visit & Hours
-            </h3>
-            
-            <div className="flex flex-col gap-3 text-slate-300 text-sm">
-              <div className="flex items-start gap-2.5 p-2 rounded-xl bg-white/5 border border-white/5">
-                <div className="w-7 h-7 rounded-lg bg-[#D6001C]/20 flex items-center justify-center text-[#D6001C] shrink-0 mt-0.5">
-                  <MapPin size={14} />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] uppercase text-slate-400 font-medium">Location</span>
-                  <span className="font-medium text-white text-xs">Oginga Odinga Street, Kisumu, Kenya</span>
-                </div>
-              </div>
+          {/* Column 4: Contact & Visit Info (3 cols) - CLEAN BORDERLESS LAYOUT */}
+          <div className="lg:col-span-3 space-y-8 2xl:space-y-10">
 
-              <div className="flex items-start gap-2.5 p-2 rounded-xl bg-white/5 border border-white/5">
-                <div className="w-7 h-7 rounded-lg bg-[#0367B4]/20 flex items-center justify-center text-[#2795D3] shrink-0 mt-0.5">
-                  <Clock size={14} />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] uppercase text-slate-400 font-medium">Office Hours</span>
-                  <span className="font-medium text-white text-xs">Mon - Fri: 8:00 AM - 5:00 PM</span>
-                </div>
-              </div>
+            {/* Contact Details (Clean, no boxes) */}
+            <div className="space-y-4">
+              <h4 className="text-sm sm:text-base 2xl:text-lg font-bold text-white uppercase tracking-wider text-[#2795D3]">
+                Contact Us
+              </h4>
+              <ul className="space-y-3 sm:space-y-3.5 2xl:space-y-4 text-sm sm:text-base 2xl:text-lg">
+                <li className="flex items-start gap-3 text-slate-300">
+                  <MapPin className="w-5 h-5 2xl:w-6 2xl:h-6 text-[#2795D3] shrink-0 mt-0.5" />
+                  <span>Kisumu City, Oginga Odinga Street, Kenya</span>
+                </li>
+                <li className="flex items-center gap-3 text-slate-300">
+                  <Phone className="w-5 h-5 2xl:w-6 2xl:h-6 text-[#2795D3] shrink-0" />
+                  <a href="tel:0702562730" className="hover:text-white transition-colors">
+                    0702 562 730 / 0103 390 866
+                  </a>
+                </li>
+                <li className="flex items-center gap-3 text-slate-300">
+                  <Mail className="w-5 h-5 2xl:w-6 2xl:h-6 text-[#2795D3] shrink-0" />
+                  <a href="mailto:lakeviewgermanschool@gmail.com" className="hover:text-white transition-colors">
+                    lakeviewgermanschool@gmail.com
+                  </a>
+                </li>
+              </ul>
             </div>
+
+
+
           </div>
 
         </div>
 
-        {/* Sub-Footer / Socials & Copyright */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          
-          {/* Social Icons */}
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-slate-400 font-medium mr-1">Socials:</span>
-            <a
-              href="https://web.facebook.com/p/Lakeview-German-School-61586087463545/?_rdc=1&_rdr#"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2795D3] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
-            >
-              <Facebook size={16} />
-            </a>
-            <a
-              href="https://www.instagram.com/lv_german_school/"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2795D3] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
-            >
-              <Instagram size={16} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/lakeview-german-school-535b28409/"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2795D3] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
-            >
-              <Linkedin size={16} />
-            </a>
-            <a
-              href="https://www.tiktok.com/@lvgermanschool/photo/7633872125035711764"
-              aria-label="TikTok"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2795D3] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-              </svg>
-            </a>
-            <a
-              href="https://wa.me/254702562730"
-              aria-label="WhatsApp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2795D3] flex items-center justify-center text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
-            >
-              <MessageCircle size={16} />
-            </a>
-          </div>
+        {/* Bottom Bar & Copyright */}
+        <div className="pt-8 sm:pt-10 2xl:pt-12 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm 2xl:text-base text-slate-400">
+          <p className="text-center md:text-left">
+            © {new Date().getFullYear()} Lakeview German School. All rights reserved.
+          </p>
 
-          {/* Copyright notice */}
-          <div className="text-xs text-white text-center md:text-right">
-            <span> {currentYear} Lakeview German School. All rights reserved.</span>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-slate-400">
+            <a href="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </a>
+            <span className="w-1 h-1 rounded-full bg-slate-600 hidden sm:inline-block" />
+            <a href="/terms" className="hover:text-white transition-colors">
+              Terms of Service
+            </a>
+            <span className="w-1 h-1 rounded-full bg-slate-600 hidden sm:inline-block" />
+            <span className="text-slate-300 font-medium">
+              Designed for Global Success
+            </span>
           </div>
-          
         </div>
+
       </div>
-    </footer>
+    </footer >
   );
 }
+
+export default SiteFooter;
