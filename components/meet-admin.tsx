@@ -14,7 +14,7 @@ import Image from "next/image";
 const admin = {
     name: "Fredrick Ouma",
     title: "School Administrator",
-    photo: "/fred.jpg",
+    photo: "/frednew.jpg",
     bio: "Fredrick oversees day-to-day operations at Lakeview German School, supporting students from enrollment through every stage of their learning journey — including class scheduling, exam coordination, and guidance on Ausbildung and job application processes.",
     badges: [
         "Ausbildung & Visa Guidance",

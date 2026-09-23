@@ -312,30 +312,6 @@ export default function Home() {
       </section>
 
 
-
-      {/* Final CTA Banner */}
-      <section className="py-16 lg:py-20 bg-[#0D2752] text-white">
-        <div className="max-w-5xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="text-3xl sm:text-4xl 2xl:text-5xl font-extrabold tracking-tight">
-            Your Germany Journey Starts Here
-          </h2>
-          <p className="text-slate-300 2xl:text-xl font-medium">
-            Call/WhatsApp: 0702 562 730 | 0103 390 866
-          </p>
-          <div>
-            <a
-              href="https://wa.me/254702562730?text=Hi,%20I'd%20like%20to%20know%20more%20about%20German%20classes%20at%20Lakeview%20German%20School"
-              className="inline-flex items-center gap-2.5 px-8 py-4 2xl:px-10 2xl:py-5 rounded-full bg-[#D6001C] text-white font-bold text-base 2xl:text-lg shadow-lg hover:bg-[#b50018] active:scale-95 transition-all"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MessageCircle size={20} />
-              <span>Chat with us on WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <FAQPage />
 
       <SiteFooter />

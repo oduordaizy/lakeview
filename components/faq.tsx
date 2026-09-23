@@ -12,8 +12,7 @@ import {
 } from 'lucide-react';
 
 
-import SiteFooter from './site-footer';
-import { SiteHeader } from './site-header';
+
 const faqItems = [
     {
         question: 'Do I need any German knowledge to start A1?',
@@ -62,9 +61,6 @@ export default function FAQPage() {
                 <div className="mx-auto max-w-4xl 2xl:max-w-5xl px-4 sm:px-6 lg:px-8 2xl:px-12">
 
                     <div className="mb-12 text-center">
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#0367B4]">
-                            Help & Support
-                        </span>
                         <h2 className="mt-1 text-3xl sm:text-4xl 2xl:text-5xl font-extrabold text-[#0D2752] tracking-tight">
                             FAQs
                         </h2>
