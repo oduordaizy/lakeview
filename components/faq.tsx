@@ -66,10 +66,10 @@ export default function FAQPage() {
                             Help & Support
                         </span>
                         <h2 className="mt-1 text-3xl sm:text-4xl 2xl:text-5xl font-extrabold text-[#0D2752] tracking-tight">
-                            Got Questions? We Have Answers.
+                            FAQs
                         </h2>
                         <p className="mt-2 text-base 2xl:text-lg text-slate-600">
-                            Can’t find what you’re looking for? Feel free to contact our administration directly.
+                            Got Questions? We Have Answers.
                         </p>
                     </div>
 
