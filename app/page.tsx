@@ -18,6 +18,7 @@ import {
 import Link from 'next/link';
 import { SiteFooter } from '../components/site-footer';
 import { SiteHeader } from '../components/site-header';
+import TeamSection from '../components/meet-admin';
 
 const whyChooseUs = [
   {
@@ -293,6 +294,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TeamSection />
 
       {/* Our Reach Section */}
       <section className="py-16 lg:py-24 bg-[#EAF4FB]/50">
