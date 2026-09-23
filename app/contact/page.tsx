@@ -29,7 +29,7 @@ export default function ContactPage() {
           <div className="contact-info">
             <h2>Get in Touch</h2>
             <p>We're here to help you find the right German learning path.</p>
-            
+
             <div className="contact-details-list">
               <a href="https://wa.me/254702562730?text=Hi, I'd like to know more about German classes at Lakeview German School" target="_blank" rel="noopener noreferrer" className="contact-item">
                 <MessageCircle size={20} />
@@ -39,7 +39,7 @@ export default function ContactPage() {
                 </div>
                 <ArrowUpRight size={16} />
               </a>
-              
+
               <a href="tel:+254103390866" className="contact-item">
                 <Phone size={20} />
                 <div>
@@ -48,16 +48,16 @@ export default function ContactPage() {
                 </div>
                 <ArrowUpRight size={16} />
               </a>
-              
-              <a href="mailto:hello@lakeviewgerman.school" className="contact-item">
+
+              <a href="mailto:lakeviewgermanschool@gmail.com" className="contact-item">
                 <Mail size={20} />
                 <div>
                   <small>Email</small>
-                  <span>hello@lakeviewgerman.school</span>
+                  <span>lakeviewgermanschool@gmail.com</span>
                 </div>
                 <ArrowUpRight size={16} />
               </a>
-              
+
               <div className="contact-item">
                 <MapPin size={20} />
                 <div>
@@ -99,18 +99,18 @@ export default function ContactPage() {
                   <h2>Tell Us About Yourself</h2>
                   <p>Fill out this form and we'll help you find the perfect class</p>
                 </div>
-                
+
                 <form onSubmit={handleSubmit}>
                   <label>
                     Full Name
                     <input name="name" required placeholder="Your full name" />
                   </label>
-                  
+
                   <label>
                     Phone Number
                     <input name="phone" type="tel" required placeholder="07XX XXX XXX" />
                   </label>
-                  
+
                   <label>
                     Preferred Format
                     <select name="format" required defaultValue="">
@@ -119,7 +119,7 @@ export default function ContactPage() {
                       <option value="physical">Physical Classes (Kisumu)</option>
                     </select>
                   </label>
-                  
+
                   <label>
                     Preferred Schedule
                     <select name="schedule" required defaultValue="">
@@ -128,7 +128,7 @@ export default function ContactPage() {
                       <option value="evening">Evening (8 PM – 10 PM)</option>
                     </select>
                   </label>
-                  
+
                   <label>
                     Current Level
                     <select name="level" required defaultValue="">
@@ -139,12 +139,12 @@ export default function ContactPage() {
                       <option value="b1">B1 (Intermediate)</option>
                     </select>
                   </label>
-                  
+
                   <label>
                     Message (Optional)
                     <textarea name="message" placeholder="Tell us about your goals or any questions..." rows={4} />
                   </label>
-                  
+
                   <button type="submit" className="button button-accent-red form-submit">
                     Submit Enrollment Request <ArrowUpRight size={16} />
                   </button>
