@@ -15,6 +15,7 @@ import Link from 'next/link';
 import { SiteFooter } from '../components/site-footer';
 import { SiteHeader } from '../components/site-header';
 import TeamSection from '../components/meet-admin';
+import FAQPage from '../components/faq';
 
 const whyChooseUs = [
   {
@@ -310,6 +311,8 @@ export default function Home() {
         </div>
       </section>
 
+
+
       {/* Final CTA Banner */}
       <section className="py-16 lg:py-20 bg-[#0D2752] text-white">
         <div className="max-w-5xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
@@ -332,6 +335,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FAQPage />
 
       <SiteFooter />
     </main>
