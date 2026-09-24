@@ -41,10 +41,6 @@ export default function TeamSection() {
 
                 {/* Section Header */}
                 <div className="mb-10 text-center md:mb-14 2xl:mb-16">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-[#0367B4]/20 bg-[#FDFDFD] px-3.5 py-1 text-xs 2xl:text-sm font-semibold uppercase tracking-wider text-[#0367B4]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#D6001C]" />
-                        Student Services & Administration
-                    </div>
                     <h2 className="mt-3 text-3xl sm:text-4xl 2xl:text-5xl font-bold tracking-tight text-[#0D2752]">
                         Meet Our Administrator
                     </h2>

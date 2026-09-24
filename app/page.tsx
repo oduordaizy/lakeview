@@ -16,6 +16,7 @@ import { SiteFooter } from '../components/site-footer';
 import { SiteHeader } from '../components/site-header';
 import TeamSection from '../components/meet-admin';
 import FAQPage from '../components/faq';
+import { ProgramsSnapshot } from '../components/programs';
 
 const whyChooseUs = [
   {
@@ -138,7 +139,7 @@ export default function Home() {
                 {/* Hero Image Wrapper */}
                 <div className="relative overflow-hidden rounded-2xl shadow-xl">
                   <img
-                    src="/hero2.png"
+                    src="/hero3.png"
                     alt="Lakeview German School Classroom"
                     className="w-full h-[420px] sm:h-[480px] lg:h-[520px] 2xl:h-[580px] object-cover object-top hover:scale-105 transition-transform duration-500"
                   />
@@ -276,6 +277,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       <TeamSection />
 

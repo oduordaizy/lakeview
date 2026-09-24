@@ -12,7 +12,6 @@ const links = [
   { href: '/programs', label: 'Programs & Pricing' },
   { href: '/beyond-classroom', label: 'Beyond Classroom' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/faq', label: 'FAQ' },
 ];
 
 export function SiteHeader() {
