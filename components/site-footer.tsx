@@ -1,15 +1,11 @@
 import React from 'react';
 import {
-  Clock,
   MapPin,
   Phone,
   Mail,
   MessageCircle,
   ArrowUpRight,
-  Globe,
-  CheckCircle,
   ChevronRight,
-  Sparkles,
 } from 'lucide-react';
 
 const quickLinks = [
@@ -39,71 +35,69 @@ export function SiteFooter() {
     );
 
   return (
-    <footer className="relative bg-[#0D2752] text-white overflow-hidden pt-16 pb-8 sm:pt-20 lg:pt-24 2xl:pt-32">
-      {/* Background Decorative Ambient Glows */}
-      <div className="pointer-events-none absolute -top-40 -left-40 w-96 h-96 2xl:w-[600px] 2xl:h-[600px] rounded-full bg-[#0367B4]/20 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 right-0 w-96 h-96 2xl:w-[700px] 2xl:h-[700px] rounded-full bg-[#2795D3]/15 blur-3xl" />
+    <footer className="relative bg-[#051124] text-white overflow-hidden pt-24 pb-8 border-t border-white/5">
+      {/* Premium Dark Abstract Elements */}
+      <div className="pointer-events-none absolute top-0 right-0 w-full h-[500px] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#0367B4]/20 via-transparent to-transparent opacity-50" />
+      <div className="pointer-events-none absolute -bottom-40 -left-40 w-[800px] h-[800px] rounded-full bg-[#0367B4]/10 blur-[120px]" />
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 mix-blend-overlay"></div>
 
-      {/* Main Container tailored for wide & ultra-wide screens */}
-      <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative z-10">
+      <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Top Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 2xl:gap-16 pb-12 lg:pb-16 2xl:pb-20 border-b border-[#0367B4]/30">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-white/10">
 
-          {/* Column 1: Brand & Overview (4 cols on lg, 4 cols on 2xl) */}
-          <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
-            <div className="space-y-4 sm:space-y-5">
-              <div className="flex items-center gap-3">
-                <div className="bg-white p-2 rounded-xl shadow-md inline-block">
+          {/* Column 1: Brand & Overview */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="bg-white p-2.5 rounded-2xl shadow-glow inline-block border border-white/10">
                   <img
                     src="/logo.jpg"
                     alt="Lakeview German School Logo"
-                    className="w-16 h-12 sm:w-20 sm:h-14 2xl:w-24 2xl:h-16 object-contain"
+                    className="w-16 sm:w-20 object-contain"
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl sm:text-2xl 2xl:text-3xl font-extrabold text-white tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                     Lakeview
                   </h3>
-                  <p className="text-xs sm:text-sm 2xl:text-base text-[#2795D3] font-semibold tracking-wider uppercase">
+                  <p className="text-sm text-[#2795D3] font-bold tracking-widest uppercase">
                     German School
                   </p>
                 </div>
               </div>
 
-              <p className="text-slate-300 text-sm sm:text-base 2xl:text-lg leading-relaxed max-w-md">
+              <p className="text-slate-400 text-base lg:text-lg leading-relaxed max-w-sm">
                 Empowering learners in Kenya and beyond to master German from A1 to B2. Prepare for certified exams, university studies, and career opportunities in Germany.
               </p>
             </div>
 
-            {/* Direct WhatsApp Callout Tag */}
             <div className="pt-2">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 px-5 py-3 2xl:px-7 2xl:py-4 rounded-full bg-[#D6001C] text-white font-bold text-xs sm:text-sm 2xl:text-base shadow-lg shadow-[#D6001C]/30 hover:bg-[#b50018] hover:shadow-xl transition-all duration-200 active:scale-95"
+                className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white/5 border border-white/10 text-white font-bold text-sm hover:bg-white hover:text-[#0D2752] transition-all duration-300"
               >
-                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 2xl:w-6 2xl:h-6 fill-current" />
-                <span>Chat Directly on WhatsApp</span>
-                <ArrowUpRight className="w-4 h-4 2xl:w-5 2xl:h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <MessageCircle className="w-5 h-5 group-hover:text-[#25D366] transition-colors" />
+                <span>Chat on WhatsApp</span>
+                <ArrowUpRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
               </a>
             </div>
           </div>
 
-          {/* Column 2: Quick Links (2 cols) */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-sm sm:text-base 2xl:text-lg font-bold text-white uppercase tracking-wider text-[#2795D3]">
+          {/* Column 2: Quick Links */}
+          <div className="lg:col-span-2 space-y-6">
+            <h4 className="text-sm font-bold text-white uppercase tracking-widest text-[#2795D3]">
               Quick Links
             </h4>
-            <ul className="space-y-2.5 sm:space-y-3 2xl:space-y-4">
+            <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="group flex items-center text-sm sm:text-base 2xl:text-lg text-slate-300 hover:text-white transition-colors"
+                    className="group flex items-center text-base text-slate-400 hover:text-white transition-colors"
                   >
-                    <ChevronRight className="w-3.5 h-3.5 text-[#2795D3] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200 mr-1" />
+                    <ChevronRight className="w-4 h-4 text-[#2795D3] opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-1" />
                     <span>{link.label}</span>
                   </a>
                 </li>
@@ -111,19 +105,19 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Column 3: Programs (2 cols) */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-sm sm:text-base 2xl:text-lg font-bold text-white uppercase tracking-wider text-[#2795D3]">
+          {/* Column 3: Programs */}
+          <div className="lg:col-span-3 space-y-6">
+            <h4 className="text-sm font-bold text-white uppercase tracking-widest text-[#2795D3]">
               Our Programs
             </h4>
-            <ul className="space-y-2.5 sm:space-y-3 2xl:space-y-4">
+            <ul className="space-y-4">
               {programLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="group flex items-center text-sm sm:text-base 2xl:text-lg text-slate-300 hover:text-white transition-colors"
+                    className="group flex items-center text-base text-slate-400 hover:text-white transition-colors"
                   >
-                    <ChevronRight className="w-3.5 h-3.5 text-[#2795D3] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200 mr-1" />
+                    <ChevronRight className="w-4 h-4 text-[#2795D3] opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-1" />
                     <span>{link.label}</span>
                   </a>
                 </li>
@@ -131,63 +125,56 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Column 4: Contact & Visit Info (3 cols) - CLEAN BORDERLESS LAYOUT */}
-          <div className="lg:col-span-3 space-y-8 2xl:space-y-10">
-
-            {/* Contact Details (Clean, no boxes) */}
-            <div className="space-y-4">
-              <h4 className="text-sm sm:text-base 2xl:text-lg font-bold text-white uppercase tracking-wider text-[#2795D3]">
-                Contact Us
-              </h4>
-              <ul className="space-y-3 sm:space-y-3.5 2xl:space-y-4 text-sm sm:text-base 2xl:text-lg">
-                <li className="flex items-start gap-3 text-slate-300">
-                  <MapPin className="w-5 h-5 2xl:w-6 2xl:h-6 text-[#2795D3] shrink-0 mt-0.5" />
-                  <span>Kisumu City, Oginga Odinga Street, Kenya</span>
-                </li>
-                <li className="flex items-center gap-3 text-slate-300">
-                  <Phone className="w-5 h-5 2xl:w-6 2xl:h-6 text-[#2795D3] shrink-0" />
-                  <a href="tel:0702562730" className="hover:text-white transition-colors">
-                    0702 562 730 / 0103 390 866
-                  </a>
-                </li>
-                <li className="flex items-center gap-3 text-slate-300">
-                  <Mail className="w-5 h-5 2xl:w-6 2xl:h-6 text-[#2795D3] shrink-0" />
-                  <a href="mailto:lakeviewgermanschool@gmail.com" className="hover:text-white transition-colors">
-                    lakeviewgermanschool@gmail.com
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-
-
+          {/* Column 4: Contact & Visit Info */}
+          <div className="lg:col-span-2 space-y-6">
+            <h4 className="text-sm font-bold text-white uppercase tracking-widest text-[#2795D3]">
+              Contact Us
+            </h4>
+            <ul className="space-y-5 text-base">
+              <li className="flex items-start gap-4 text-slate-400">
+                <MapPin className="w-5 h-5 text-[#2795D3] shrink-0 mt-1" />
+                <span>Kisumu City, Oginga Odinga Street, Kenya</span>
+              </li>
+              <li className="flex items-center gap-4 text-slate-400">
+                <Phone className="w-5 h-5 text-[#2795D3] shrink-0" />
+                <a href="tel:0702562730" className="hover:text-white transition-colors">
+                  0702 562 730
+                </a>
+              </li>
+              <li className="flex items-start gap-4 text-slate-400">
+                <Mail className="w-5 h-5 text-[#2795D3] shrink-0 mt-1" />
+                <a href="mailto:lakeviewgermanschool@gmail.com" className="hover:text-white transition-colors break-words">
+                  lakeviewgermanschool <br className="hidden lg:block"/> @gmail.com
+                </a>
+              </li>
+            </ul>
           </div>
 
         </div>
 
         {/* Bottom Bar & Copyright */}
-        <div className="pt-8 sm:pt-10 2xl:pt-12 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm 2xl:text-base text-slate-400">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p className="text-center md:text-left">
             © {new Date().getFullYear()} Lakeview German School. All rights reserved.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 text-slate-400">
+          <div className="flex flex-wrap items-center justify-center gap-6">
             <a href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <span className="w-1 h-1 rounded-full bg-slate-600 hidden sm:inline-block" />
+            <span className="w-1 h-1 rounded-full bg-slate-700 hidden sm:inline-block" />
             <a href="/terms" className="hover:text-white transition-colors">
               Terms of Service
             </a>
-            <span className="w-1 h-1 rounded-full bg-slate-600 hidden sm:inline-block" />
-            <span className="text-slate-300 font-medium">
+            <span className="w-1 h-1 rounded-full bg-slate-700 hidden sm:inline-block" />
+            <span className="text-slate-400 font-medium tracking-wide">
               Designed for Global Success
             </span>
           </div>
         </div>
 
       </div>
-    </footer >
+    </footer>
   );
 }
 

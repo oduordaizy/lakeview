@@ -16,9 +16,9 @@ const links = [
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Prevent background scroll when mobile menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
@@ -27,13 +27,24 @@ export function SiteHeader() {
     }
   }, [menuOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const closeMenu = () => setMenuOpen(false);
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 py-1 transition-all">
-        <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
-          <div className="flex items-center justify-between h-16 sm:h-20 2xl:h-24">
+      <header className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        scrolled ? "bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm py-2" : "bg-white/50 backdrop-blur-sm border-b border-transparent py-4"
+      )}>
+        <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-16">
 
             {/* Brand / Logo */}
             <Link
@@ -44,13 +55,13 @@ export function SiteHeader() {
               <img
                 src="/logo.jpg"
                 alt="Lakeview German School Logo"
-                className="w-20 sm:w-24 2xl:w-28 h-auto object-contain transition-all"
+                className="w-24 sm:w-28 lg:w-32 h-auto object-contain transition-all"
               />
             </Link>
 
             {/* Desktop Navigation Links */}
             <nav
-              className="hidden lg:flex items-center gap-1 xl:gap-2 2xl:gap-3"
+              className="hidden lg:flex items-center gap-1 bg-slate-50/50 rounded-full px-2 py-1 border border-slate-200/60 shadow-inner"
               aria-label="Main navigation"
             >
               {links.map((link) => {
@@ -60,10 +71,10 @@ export function SiteHeader() {
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      'px-3 py-2 xl:px-4 xl:py-2.5 2xl:px-5 2xl:py-2.5 rounded-lg text-sm xl:text-base 2xl:text-base font-medium transition-all duration-200',
+                      'px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300',
                       isActive
-                        ? 'text-[#0367B4] font-semibold bg-[#EAF4FB]/70'
-                        : 'text-[#0D2752] hover:text-[#0367B4] hover:bg-[#EAF4FB]/60'
+                        ? 'bg-white text-[#0367B4] shadow-sm ring-1 ring-slate-900/5'
+                        : 'text-slate-600 hover:text-[#0D2752] hover:bg-white/50'
                     )}
                   >
                     {link.label}
@@ -76,12 +87,12 @@ export function SiteHeader() {
             <div className="hidden lg:flex items-center shrink-0">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center gap-2 px-5 py-2.5 xl:px-6 xl:py-3 2xl:px-7 2xl:py-3.5 rounded-full bg-[#D6001C] text-white text-sm xl:text-base 2xl:text-base font-semibold shadow-md shadow-[#D6001C]/20 hover:bg-[#b50018] hover:shadow-lg hover:shadow-[#D6001C]/30 active:scale-95 transition-all duration-200"
+                className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#0D2752] text-white text-sm font-bold shadow-soft hover:bg-[#0367B4] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
               >
                 <span>Enroll Now</span>
                 <ArrowUpRight
                   size={16}
-                  className="2xl:w-5 2xl:h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </Link>
             </div>
@@ -89,12 +100,12 @@ export function SiteHeader() {
             {/* Mobile Hamburger Button */}
             <button
               type="button"
-              className="lg:hidden p-2 rounded-xl text-[#0D2752] hover:bg-[#EAF4FB] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0367B4]"
+              className="lg:hidden p-2.5 rounded-full bg-slate-50 text-[#0D2752] border border-slate-200 hover:bg-slate-100 transition-colors focus:outline-none"
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen(!menuOpen)}
             >
-              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -112,41 +123,50 @@ export function SiteHeader() {
       {/* Mobile Drawer Content */}
       <aside
         className={cn(
-          'fixed top-0 right-0 z-40 h-full w-full max-w-xs bg-white shadow-2xl lg:hidden transition-transform duration-300 ease-out flex flex-col justify-between p-6 pt-24',
+          'fixed top-0 right-0 z-40 h-full w-full max-w-[280px] bg-white shadow-2xl lg:hidden transition-transform duration-300 ease-out flex flex-col',
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
-        <nav className="flex flex-col gap-1.5">
-          {links.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className={cn(
-                  'px-4 py-3 rounded-xl text-base font-medium transition-colors',
-                  isActive
-                    ? 'text-[#0367B4] bg-[#EAF4FB] font-semibold'
-                    : 'text-[#0D2752] hover:bg-slate-50'
-                )}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-        </nav>
+        <div className="p-6 flex flex-col h-full">
+          <div className="flex justify-between items-center mb-8">
+            <img src="/logo.jpg" alt="Logo" className="w-24 object-contain" />
+            <button onClick={closeMenu} className="p-2 rounded-full bg-slate-100 text-slate-600">
+              <X size={20} />
+            </button>
+          </div>
 
-        {/* Mobile CTA */}
-        <div className="pt-6 border-t border-slate-100">
-          <Link
-            href="/contact"
-            onClick={closeMenu}
-            className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-full bg-[#D6001C] text-white font-semibold text-center shadow-md shadow-[#D6001C]/25 active:scale-95 transition-all"
-          >
-            <span>Enroll Now</span>
-            <ArrowUpRight size={18} />
-          </Link>
+          <nav className="flex flex-col gap-2 flex-1">
+            {links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className={cn(
+                    'px-5 py-3.5 rounded-2xl text-base font-semibold transition-colors',
+                    isActive
+                      ? 'text-[#0367B4] bg-[#EAF4FB]'
+                      : 'text-slate-600 hover:text-[#0D2752] hover:bg-slate-50'
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Mobile CTA */}
+          <div className="pt-6 border-t border-slate-100 mt-auto pb-4">
+            <Link
+              href="/contact"
+              onClick={closeMenu}
+              className="flex items-center justify-center gap-2 w-full py-4 px-6 rounded-full bg-[#0D2752] text-white font-bold text-center shadow-soft active:scale-95 transition-all"
+            >
+              <span>Enroll Now</span>
+              <ArrowUpRight size={18} />
+            </Link>
+          </div>
         </div>
       </aside>
     </>
