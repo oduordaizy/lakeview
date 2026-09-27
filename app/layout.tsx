@@ -54,8 +54,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${sora.variable} antialiased bg-slate-50 text-slate-900 selection:bg-[#0367B4] selection:text-white overflow-x-hidden w-full flex flex-col min-h-screen`}>
+    <html lang="en" className="scroll-smooth overflow-x-hidden">
+      <body className={`${inter.variable} ${sora.variable} antialiased bg-slate-50 text-slate-900 selection:bg-[#0367B4] selection:text-white overflow-x-hidden flex flex-col min-h-screen`}>
         {children}
         <WhatsAppFloat />
         <script

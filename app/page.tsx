@@ -111,7 +111,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="font-serif text-[2.75rem] sm:text-6xl lg:text-[4rem] leading-[1.05] text-white"
+                className="font-serif text-4xl sm:text-5xl lg:text-[4rem] leading-[1.05] text-white"
                 style={{ fontFamily: "'Fraunces', Georgia, serif" }}
               >
                 Speak German
@@ -137,7 +137,7 @@ export default function Home() {
               >
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#D6001C] text-white font-semibold text-sm shadow-lg shadow-[#D6001C]/25 hover:bg-[#b50018] transition-all"
+                  className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#D6001C] text-white font-semibold text-sm shadow-lg shadow-[#D6001C]/25 hover:bg-[#b50018] transition-all"
                 >
                   Start your journey
                   <ArrowUpRight
@@ -147,7 +147,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/programs"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-medium text-sm hover:bg-white/10 transition-all"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-medium text-sm hover:bg-white/10 transition-all"
                 >
                   View programs
                 </Link>
@@ -213,7 +213,7 @@ export default function Home() {
       {/* ================= TRUST STRIP ================= */}
       <section className="bg-white border-b border-slate-100">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-7">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: CheckCircle, text: 'CEFR-aligned' },
               { icon: Globe, text: 'Online & physical classes' },
@@ -266,8 +266,8 @@ export default function Home() {
             </div>
 
             <div className="lg:col-span-7">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-2xl overflow-hidden shadow-lg aspect-[3/4] mt-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-4 mt-8 lg:mt-0">
+                <div className="rounded-2xl overflow-hidden shadow-lg aspect-[3/4] sm:mt-10">
                   <img
                     src="/lv-teacher.png"
                     alt="Instructor teaching a class at Lakeview German School"
@@ -387,7 +387,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {levels.map((level, i) => (
               <div
                 key={level.code}
@@ -439,7 +439,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[1, 2, 3].map((item, i) => (
               <motion.div
                 key={item}
@@ -477,7 +477,7 @@ export default function Home() {
             href="https://wa.me/254702562730?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20German%20classes%20at%20Lakeview%20German%20School"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#D6001C] text-white font-semibold shadow-lg shadow-[#D6001C]/25 hover:bg-[#b50018] transition-all"
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#D6001C] text-white font-semibold shadow-lg shadow-[#D6001C]/25 hover:bg-[#b50018] transition-all"
           >
             Chat with us on WhatsApp
             <ArrowUpRight size={18} />
