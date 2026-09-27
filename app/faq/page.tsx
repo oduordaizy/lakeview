@@ -41,7 +41,7 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 font-sans selection:bg-[#0367B4] selection:text-white">
+    <main className="flex-1 bg-slate-50 font-sans selection:bg-[#0367B4] selection:text-white">
       <SiteHeader />
 
       {/* Hero Section */}

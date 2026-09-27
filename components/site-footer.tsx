@@ -35,39 +35,55 @@ export function SiteFooter() {
     );
 
   return (
-    <footer className="relative bg-[#051124] text-white overflow-hidden pt-24 pb-8 border-t border-white/5">
-      {/* Premium Dark Abstract Elements */}
-      <div className="pointer-events-none absolute top-0 right-0 w-full h-[500px] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#0367B4]/20 via-transparent to-transparent opacity-50" />
+    <footer className="relative bg-[#051124] text-white pt-8 pb-8">
+      {/* Curved top edge — sits above the footer box, over whatever section precedes it */}
+      <div className="absolute inset-x-0 top-0 -translate-y-[99%] overflow-hidden leading-none">
+        <svg
+          viewBox="0 0 1440 110"
+          preserveAspectRatio="none"
+          className="w-full h-16 sm:h-24 lg:h-28"
+        >
+          <path
+            d="M0,110 L0,50 C240,10 480,90 720,60 C960,30 1200,90 1440,40 L1440,110 Z"
+            fill="#051124"
+          />
+        </svg>
+      </div>
+
+      {/* Ambient glow accents */}
+      <div className="pointer-events-none absolute top-0 right-0 w-full h-[500px] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#0367B4]/15 via-transparent to-transparent opacity-60" />
       <div className="pointer-events-none absolute -bottom-40 -left-40 w-[800px] h-[800px] rounded-full bg-[#0367B4]/10 blur-[120px]" />
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 mix-blend-overlay"></div>
 
-      <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
+      <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-white/10">
-
           {/* Column 1: Brand & Overview */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="bg-white p-2.5 rounded-2xl shadow-glow inline-block border border-white/10">
+                <div className="bg-white p-2.5 rounded-2xl inline-block border border-white/10">
                   <img
                     src="/logo.jpg"
                     alt="Lakeview German School Logo"
-                    className="w-16 sm:w-20 object-contain"
+                    className="w-14 sm:w-16 object-contain"
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  <h3
+                    className="text-2xl sm:text-3xl text-white tracking-tight leading-none"
+                    style={{ fontFamily: "'Fraunces', Georgia, serif" }}
+                  >
                     Lakeview
                   </h3>
-                  <p className="text-sm text-[#2795D3] font-bold tracking-widest uppercase">
+                  <p className="text-xs text-[#2795D3] font-medium tracking-[0.2em] uppercase mt-1">
                     German School
                   </p>
                 </div>
               </div>
 
-              <p className="text-slate-400 text-base lg:text-lg leading-relaxed max-w-sm">
-                Empowering learners in Kenya and beyond to master German from A1 to B2. Prepare for certified exams, university studies, and career opportunities in Germany.
+              <p className="text-slate-400 text-base leading-relaxed max-w-sm font-light">
+                Empowering learners across Kenya to speak German with
+                confidence — from A1 to B2, into certified exams, university
+                studies, and careers in Germany.
               </p>
             </div>
 
@@ -76,7 +92,7 @@ export function SiteFooter() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white/5 border border-white/10 text-white font-bold text-sm hover:bg-white hover:text-[#0D2752] transition-all duration-300"
+                className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white/5 border border-white/10 text-white font-semibold text-sm hover:bg-white hover:text-[#0D2752] transition-all duration-300"
               >
                 <MessageCircle className="w-5 h-5 group-hover:text-[#25D366] transition-colors" />
                 <span>Chat on WhatsApp</span>
@@ -87,7 +103,7 @@ export function SiteFooter() {
 
           {/* Column 2: Quick Links */}
           <div className="lg:col-span-2 space-y-6">
-            <h4 className="text-sm font-bold text-white uppercase tracking-widest text-[#2795D3]">
+            <h4 className="text-xs font-semibold text-[#2795D3] uppercase tracking-[0.2em]">
               Quick Links
             </h4>
             <ul className="space-y-4">
@@ -95,7 +111,7 @@ export function SiteFooter() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="group flex items-center text-base text-slate-400 hover:text-white transition-colors"
+                    className="group flex items-center text-[15px] text-slate-400 hover:text-white transition-colors"
                   >
                     <ChevronRight className="w-4 h-4 text-[#2795D3] opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-1" />
                     <span>{link.label}</span>
@@ -107,7 +123,7 @@ export function SiteFooter() {
 
           {/* Column 3: Programs */}
           <div className="lg:col-span-3 space-y-6">
-            <h4 className="text-sm font-bold text-white uppercase tracking-widest text-[#2795D3]">
+            <h4 className="text-xs font-semibold text-[#2795D3] uppercase tracking-[0.2em]">
               Our Programs
             </h4>
             <ul className="space-y-4">
@@ -115,7 +131,7 @@ export function SiteFooter() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="group flex items-center text-base text-slate-400 hover:text-white transition-colors"
+                    className="group flex items-center text-[15px] text-slate-400 hover:text-white transition-colors"
                   >
                     <ChevronRight className="w-4 h-4 text-[#2795D3] opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-1" />
                     <span>{link.label}</span>
@@ -127,13 +143,13 @@ export function SiteFooter() {
 
           {/* Column 4: Contact & Visit Info */}
           <div className="lg:col-span-2 space-y-6">
-            <h4 className="text-sm font-bold text-white uppercase tracking-widest text-[#2795D3]">
+            <h4 className="text-xs font-semibold text-[#2795D3] uppercase tracking-[0.2em]">
               Contact Us
             </h4>
-            <ul className="space-y-5 text-base">
+            <ul className="space-y-5 text-[15px]">
               <li className="flex items-start gap-4 text-slate-400">
                 <MapPin className="w-5 h-5 text-[#2795D3] shrink-0 mt-1" />
-                <span>Kisumu City, Oginga Odinga Street, Kenya</span>
+                <span>Oginga Odinga Street, Kisumu, Kenya</span>
               </li>
               <li className="flex items-center gap-4 text-slate-400">
                 <Phone className="w-5 h-5 text-[#2795D3] shrink-0" />
@@ -143,13 +159,15 @@ export function SiteFooter() {
               </li>
               <li className="flex items-start gap-4 text-slate-400">
                 <Mail className="w-5 h-5 text-[#2795D3] shrink-0 mt-1" />
-                <a href="mailto:lakeviewgermanschool@gmail.com" className="hover:text-white transition-colors break-words">
-                  lakeviewgermanschool <br className="hidden lg:block"/> @gmail.com
+                <a
+                  href="mailto:lakeviewgermanschool@gmail.com"
+                  className="hover:text-white transition-colors break-words"
+                >
+                  lakeviewgermanschool@gmail.com
                 </a>
               </li>
             </ul>
           </div>
-
         </div>
 
         {/* Bottom Bar & Copyright */}
@@ -166,13 +184,8 @@ export function SiteFooter() {
             <a href="/terms" className="hover:text-white transition-colors">
               Terms of Service
             </a>
-            <span className="w-1 h-1 rounded-full bg-slate-700 hidden sm:inline-block" />
-            <span className="text-slate-400 font-medium tracking-wide">
-              Designed for Global Success
-            </span>
           </div>
         </div>
-
       </div>
     </footer>
   );

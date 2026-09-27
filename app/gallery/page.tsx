@@ -32,11 +32,11 @@ export default function GalleryPage() {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <main className="min-h-screen bg-slate-50 font-sans selection:bg-[#0367B4] selection:text-white">
+    <main className="flex-1 bg-slate-50 font-sans selection:bg-[#0367B4] selection:text-white">
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 bg-[#0D2752] text-white overflow-hidden">
+      <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-24 bg-[#0D2752] text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0367B4]/30 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -53,7 +53,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6"
           >
             See Our Students <br className="hidden md:block"/> in Action
           </motion.h1>
@@ -61,7 +61,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto"
+            className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto"
           >
             From online classes to graduation celebrations, witness the Lakeview learning journey
           </motion.p>
@@ -135,7 +135,7 @@ export default function GalleryPage() {
       {/* CTA Section */}
       <section className="py-24 bg-white text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2752] mb-6">Want to Join Our Community?</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0D2752] mb-6">Want to Join Our Community?</h2>
           <p className="text-lg text-slate-600 mb-10">Become part of our growing family of German learners</p>
           <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#D6001C] text-white font-bold text-lg shadow-lg hover:bg-[#b50018] hover:-translate-y-1 transition-all">
             Start Your Journey

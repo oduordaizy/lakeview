@@ -11,11 +11,11 @@ export default function ContactPage() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); setSent(true); };
 
   return (
-    <main className="min-h-screen bg-slate-50 font-sans selection:bg-[#0367B4] selection:text-white">
+    <main className="flex-1 bg-slate-50 font-sans selection:bg-[#0367B4] selection:text-white">
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 bg-[#0D2752] text-white overflow-hidden">
+      <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-24 bg-[#0D2752] text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0367B4]/30 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -32,7 +32,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6"
           >
             Start Your German <br className="hidden md:block"/> Journey Today
           </motion.h1>
@@ -40,7 +40,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto"
+            className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto"
           >
             Get in touch to enroll or learn more about our programs
           </motion.p>
@@ -48,7 +48,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 lg:py-32 relative z-20 -mt-10">
+      <section className="py-16 lg:py-24 relative z-20 -mt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             
@@ -61,7 +61,7 @@ export default function ContactPage() {
               className="lg:col-span-5 flex flex-col justify-between"
             >
               <div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2752] mb-4">Get in Touch</h2>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0D2752] mb-4">Get in Touch</h2>
                 <p className="text-lg text-slate-600 mb-10">We're here to help you find the right German learning path.</p>
 
                 <div className="space-y-6">

@@ -14,11 +14,11 @@ const courseLevels = [
 
 export default function ProgramsPage() {
   return (
-    <main className="min-h-screen bg-slate-50 font-sans selection:bg-[#0367B4] selection:text-white">
+    <main className="flex-1 bg-slate-50 font-sans selection:bg-[#0367B4] selection:text-white">
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-24 bg-[#0D2752] text-white overflow-hidden">
+      <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-24 bg-[#0D2752] text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0367B4]/20 rounded-full blur-[100px] pointer-events-none"></div>
         
@@ -35,7 +35,7 @@ export default function ProgramsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6"
           >
             Choose the Learning Format <br className="hidden md:block"/> That Fits Your Life
           </motion.h1>
@@ -43,7 +43,7 @@ export default function ProgramsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto"
+            className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto"
           >
             Online from anywhere, or in person in Kisumu
           </motion.p>
@@ -51,7 +51,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Comparison Cards */}
-      <section className="py-20 lg:py-28 relative z-20 -mt-10">
+      <section className="py-16 lg:py-24 relative z-20 -mt-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
@@ -127,11 +127,11 @@ export default function ProgramsPage() {
       </section>
 
       {/* Course Structure Table */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-sm font-bold uppercase tracking-wider text-[#0367B4] mb-2 block">Course Structure</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2752] mb-4">Your Path from A1 to B2</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0D2752] mb-4">Your Path from A1 to B2</h2>
             <p className="text-lg text-slate-500">Total program: A1–B2 in 8 months</p>
           </div>
           
@@ -176,9 +176,9 @@ export default function ProgramsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2752] mb-6">Not Sure Which Class Fits You?</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0D2752] mb-6">Not Sure Which Class Fits You?</h2>
           <p className="text-lg text-slate-600 mb-10">Talk to us and we'll help you find the perfect fit</p>
           <a
             href="https://wa.me/254702562730?text=Hi, I'd like to know more about German classes at Lakeview German School"
