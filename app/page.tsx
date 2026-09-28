@@ -250,7 +250,7 @@ export default function Home() {
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg aspect-[3/4]">
                   <img
-                    src="/student-1.png"
+                    src="/student-3.png"
                     alt="Students at Lakeview German School"
                     className="w-full h-full object-cover"
                   />
