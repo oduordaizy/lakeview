@@ -17,7 +17,7 @@ export function PremiumHero() {
         <section className="relative isolate overflow-hidden bg-[#0D2752] min-h-[92svh] flex items-center">
             {/* ---------- Background image (slow settle-in zoom) ---------- */}
             <motion.img
-                src="/hero3.png"
+                src="/hero4.jpg"
                 alt="Students learning German at Lakeview German School"
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
