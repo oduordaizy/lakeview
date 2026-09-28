@@ -86,23 +86,6 @@ export default function Home() {
       <SiteHeader />
 
       <PremiumHero />
-      <section className="bg-white border-b border-slate-100">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-7">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: CheckCircle, text: 'CEFR-aligned' },
-              { icon: Globe, text: 'Online & physical classes' },
-              { icon: Briefcase, text: 'Job & Ausbildung support' },
-              { icon: MapPin, text: 'Kisumu-based, wide reach' },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <item.icon size={20} className="text-[#0367B4] shrink-0" />
-                <span className="text-sm font-medium text-[#0D2752]">{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ================= OUR STORY ================= */}
       <section className="py-24 lg:py-32 bg-[#FDFDFD]">
