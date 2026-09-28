@@ -36,7 +36,7 @@ export function PremiumHero() {
             <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.07] mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
             {/* ---------- Content ---------- */}
-            <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8 pt-32 pb-40 lg:pt-40 lg:pb-48">
+            <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8 pt-16 sm:pt-24 pb-40 lg:pt-40 lg:pb-48">
                 <div className="max-w-3xl">
                     <motion.div
                         initial={{ opacity: 0, y: 14 }}

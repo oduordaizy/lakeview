@@ -107,8 +107,7 @@ export default function Home() {
                 different future — not just fill a classroom.
               </p>
               <p className="text-slate-600 leading-relaxed text-lg font-light mb-8">
-                Today we teach learners online across Kenya — from Narok to
-                Mombasa — and in person on Oginga Odinga Street, Kisumu,
+                Today we teach learners online across the world and in person on Oginga Odinga Street, Kisumu,
                 carrying every student from their first word to B2 fluency.
               </p>
               <Link

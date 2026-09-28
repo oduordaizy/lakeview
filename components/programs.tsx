@@ -4,7 +4,7 @@ import { Globe, MapPin, ArrowUpRight, Clock, Calendar } from 'lucide-react';
 const programs = [
     {
         title: 'Online Classes',
-        price: 'KSh 15,000',
+        price: 'KSh 10,000',
         period: '/ month',
         schedule: 'Flexible Evening & Weekend Batches',
         location: 'Live Interactive Zoom / Google Meet',
@@ -13,7 +13,7 @@ const programs = [
     },
     {
         title: 'Physical Campus',
-        price: 'KSh 18,000',
+        price: 'KSh 12,000',
         period: '/ month',
         schedule: 'Morning & Afternoon Weekday Sessions',
         location: 'Kisumu Campus, Oginga Odinga Street',
@@ -54,7 +54,7 @@ export function ProgramsSnapshot() {
                         >
                             {/* Card Background Gradient on Hover */}
                             <div className="absolute inset-0 bg-gradient-to-br from-[#0367B4]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
+
                             <div className="relative z-10">
                                 {/* Header */}
                                 <div className="flex items-center justify-between mb-8">

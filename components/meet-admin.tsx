@@ -24,16 +24,16 @@ export default function TeamSection() {
     return (
         <section className="relative overflow-hidden bg-white py-24 md:py-32">
             <div className="pointer-events-none absolute -left-40 top-0 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-[#EAF4FB] to-transparent blur-3xl opacity-50" />
-            
+
             <div className="relative mx-auto max-w-7xl 2xl:max-w-[1536px] px-4 sm:px-6 lg:px-8">
 
                 <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12">
-                    
+
                     {/* Content Column (Left on Desktop) */}
                     <div className="flex flex-col lg:col-span-6 lg:pr-8 order-2 lg:order-1">
                         <div className="mb-6">
                             <span className="inline-block rounded-full bg-[#EAF4FB] px-4 py-1.5 text-sm font-bold uppercase tracking-wider text-[#0367B4]">
-                                Meet Our Team
+                                Meet Our Administrator
                             </span>
                             <h2 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#0D2752]">
                                 {admin.name}
