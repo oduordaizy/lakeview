@@ -89,120 +89,94 @@ export default function Home() {
 
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden bg-[#0D2752]">
-        {/* subtle background texture */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
-        <div className="pointer-events-none absolute -top-40 -right-40 h-[36rem] w-[36rem] rounded-full bg-[#2795D3]/20 blur-3xl" />
+        {/* Full background image with adjusted positioning to reduce heavy zoom-in */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/hero3.png"
+            alt="Lakeview German School background"
+            className="w-full h-full object-cover object-center scale-100 opacity-80"
+          />
+          {/* Gradient overlay to ensure text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0D2752]/95 via-[#0D2752]/80 to-[#0D2752]/60" />
+        </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-16 pb-20 lg:pt-20 lg:pb-28">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            {/* Text column */}
-            <div className="lg:col-span-6 xl:col-span-6">
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-                className="inline-flex items-center gap-2 text-[#2795D3] text-sm font-medium tracking-wide mb-6"
-              >
-                <span className="h-px w-8 bg-[#2795D3]" />
-                Kisumu · Online across Kenya
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-                className="font-serif text-4xl sm:text-5xl lg:text-[4rem] leading-[1.05] text-white"
-                style={{ fontFamily: "'Fraunces', Georgia, serif" }}
-              >
-                Speak German
-                <br />
-                with confidence.
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="mt-6 text-lg text-slate-300 leading-relaxed max-w-lg font-light"
-              >
-                CEFR-aligned training from A1 to B2 — preparing you for jobs,
-                Ausbildung, and further study in Germany.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                className="mt-10 flex flex-col sm:flex-row gap-4"
-              >
-                <Link
-                  href="/contact"
-                  className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#D6001C] text-white font-semibold text-sm shadow-lg shadow-[#D6001C]/25 hover:bg-[#b50018] transition-all"
-                >
-                  Start your journey
-                  <ArrowUpRight
-                    size={18}
-                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                </Link>
-                <Link
-                  href="/programs"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-medium text-sm hover:bg-white/10 transition-all"
-                >
-                  View programs
-                </Link>
-              </motion.div>
-
-              {/* Trust row */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.7, delay: 0.5 }}
-                className="mt-14 grid grid-cols-2 gap-6 max-w-md pt-8 border-t border-white/10"
-              >
-                <div className="flex items-center gap-3">
-                  <Award size={20} className="text-[#2795D3] shrink-0" />
-                  <div>
-                    <p className="text-sm font-semibold text-white">CEFR standard</p>
-                    <p className="text-xs text-slate-400">A1 – B2</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle size={20} className="text-[#2795D3] shrink-0" />
-                  <div>
-                    <p className="text-sm font-semibold text-white">Ausbildung support</p>
-                    <p className="text-xs text-slate-400">End to end</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Image column */}
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-28 pb-32 lg:pt-36 lg:pb-40">
+          <div className="max-w-2xl">
             <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-6 xl:col-span-6 relative"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="inline-flex items-center gap-2 text-[#2795D3] text-sm font-medium tracking-wide mb-6"
             >
-              <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
-                <img
-                  src="/hero3.png"
-                  alt="Lakeview German School students in class"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D2752]/50 via-transparent to-transparent" />
-              </div>
+              <span className="h-px w-8 bg-[#2795D3]" />
+              Kisumu · Online across Kenya
+            </motion.div>
 
-              {/* Floating credential card */}
-              <div className="hidden sm:flex absolute -bottom-6 -left-6 items-center gap-3 bg-white rounded-2xl shadow-xl px-5 py-4 max-w-[15rem]">
-                <div className="h-11 w-11 rounded-full bg-[#EAF4FB] flex items-center justify-center shrink-0">
-                  <GraduationCap size={20} className="text-[#0367B4]" />
-                </div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="font-serif text-4xl sm:text-5xl lg:text-[4rem] leading-[1.05] text-white"
+              style={{ fontFamily: "'Fraunces', Georgia, serif" }}
+            >
+              Speak German
+              <br />
+              with confidence.
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-lg font-light"
+            >
+              CEFR-aligned training from A1 to B2 — preparing you for jobs,
+              Ausbildung, and further study in Germany.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="mt-10 flex flex-col sm:flex-row gap-4"
+            >
+              <Link
+                href="/contact"
+                className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#D6001C] text-white font-semibold text-sm shadow-lg shadow-[#D6001C]/25 hover:bg-[#b50018] transition-all"
+              >
+                Start your journey
+                <ArrowUpRight
+                  size={18}
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+              <Link
+                href="/programs"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-medium text-sm hover:bg-white/10 transition-all"
+              >
+                View programs
+              </Link>
+            </motion.div>
+
+            {/* Trust row */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              className="mt-14 grid grid-cols-2 gap-6 max-w-md pt-8 border-t border-white/10"
+            >
+              <div className="flex items-center gap-3">
+                <Award size={20} className="text-[#2795D3] shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-[#0D2752] leading-tight">
-                    A1 – B2 in 8 months
-                  </p>
-                  <p className="text-xs text-[#0D2752]/60">Online or in Kisumu</p>
+                  <p className="text-sm font-semibold text-white">CEFR standard</p>
+                  <p className="text-xs text-slate-400">A1 – B2</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle size={20} className="text-[#2795D3] shrink-0" />
+                <div>
+                  <p className="text-sm font-semibold text-white">Ausbildung support</p>
+                  <p className="text-xs text-slate-400">End to end</p>
                 </div>
               </div>
             </motion.div>
@@ -269,9 +243,9 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-4 mt-8 lg:mt-0">
                 <div className="rounded-2xl overflow-hidden shadow-lg aspect-[3/4] sm:mt-10">
                   <img
-                    src="/lv-teacher.png"
+                    src="/girl-with-gerflag2.png"
                     alt="Instructor teaching a class at Lakeview German School"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg aspect-[3/4]">
