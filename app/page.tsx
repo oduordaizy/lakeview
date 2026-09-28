@@ -17,10 +17,8 @@ import { SiteHeader } from '../components/site-header';
 import TeamSection from '../components/meet-admin';
 import FAQPage from '../components/faq';
 import { ProgramsSnapshot } from '../components/programs';
+import PremiumHero from '../components/hero';
 
-// ---------------------------------------------------------------------------
-// Data
-// ---------------------------------------------------------------------------
 
 const whyChooseUs = [
   {
@@ -87,104 +85,7 @@ export default function Home() {
     <main className="flex-1 bg-[#FDFDFD] text-[#0D2752] font-sans antialiased flex flex-col">
       <SiteHeader />
 
-      {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden bg-[#0D2752]">
-        {/* Full background image with adjusted positioning to reduce heavy zoom-in */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/hero3.png"
-            alt="Lakeview German School background"
-            className="w-full h-full object-cover object-center scale-100 opacity-80"
-          />
-          {/* Gradient overlay to ensure text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D2752]/95 via-[#0D2752]/80 to-[#0D2752]/60" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-28 pb-32 lg:pt-36 lg:pb-40">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="inline-flex items-center gap-2 text-[#2795D3] text-sm font-medium tracking-wide mb-6"
-            >
-              <span className="h-px w-8 bg-[#2795D3]" />
-              Kisumu · Online across Kenya
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-serif text-4xl sm:text-5xl lg:text-[4rem] leading-[1.05] text-white"
-              style={{ fontFamily: "'Fraunces', Georgia, serif" }}
-            >
-              Speak German
-              <br />
-              with confidence.
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-lg font-light"
-            >
-              CEFR-aligned training from A1 to B2 — preparing you for jobs,
-              Ausbildung, and further study in Germany.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="mt-10 flex flex-col sm:flex-row gap-4"
-            >
-              <Link
-                href="/contact"
-                className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#D6001C] text-white font-semibold text-sm shadow-lg shadow-[#D6001C]/25 hover:bg-[#b50018] transition-all"
-              >
-                Start your journey
-                <ArrowUpRight
-                  size={18}
-                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </Link>
-              <Link
-                href="/programs"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-medium text-sm hover:bg-white/10 transition-all"
-              >
-                View programs
-              </Link>
-            </motion.div>
-
-            {/* Trust row */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="mt-14 grid grid-cols-2 gap-6 max-w-md pt-8 border-t border-white/10"
-            >
-              <div className="flex items-center gap-3">
-                <Award size={20} className="text-[#2795D3] shrink-0" />
-                <div>
-                  <p className="text-sm font-semibold text-white">CEFR standard</p>
-                  <p className="text-xs text-slate-400">A1 – B2</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle size={20} className="text-[#2795D3] shrink-0" />
-                <div>
-                  <p className="text-sm font-semibold text-white">Ausbildung support</p>
-                  <p className="text-xs text-slate-400">End to end</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= TRUST STRIP ================= */}
+      <PremiumHero />
       <section className="bg-white border-b border-slate-100">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-7">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
