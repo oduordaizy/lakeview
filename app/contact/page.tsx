@@ -15,7 +15,7 @@ export default function ContactPage() {
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-24 bg-[#0D2752] text-white overflow-hidden">
+      <section className="relative pt-12 pb-12 lg:pt-16 lg:pb-16 bg-[#0D2752] text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0367B4]/30 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -32,7 +32,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6"
+            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-5"
           >
             Start Your German <br className="hidden md:block"/> Journey Today
           </motion.h1>
@@ -40,7 +40,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto"
+            className="text-sm sm:text-base lg:text-lg text-slate-300 max-w-2xl mx-auto"
           >
             Get in touch to enroll or learn more about our programs
           </motion.p>
@@ -48,9 +48,9 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 lg:py-24 relative z-20 -mt-10">
+      <section className="py-12 lg:py-16 relative z-20 -mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
             
             {/* Contact Details */}
             <motion.div 
@@ -61,17 +61,17 @@ export default function ContactPage() {
               className="lg:col-span-5 flex flex-col justify-between"
             >
               <div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0D2752] mb-4">Get in Touch</h2>
-                <p className="text-lg text-slate-600 mb-10">We're here to help you find the right German learning path.</p>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#0D2752] mb-4">Get in Touch</h2>
+                <p className="text-base text-slate-600 mb-8">We're here to help you find the right German learning path.</p>
 
                 <div className="space-y-6">
-                  <a href="https://wa.me/254702562730?text=Hi, I'd like to know more about German classes at Lakeview German School" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#25D366]/30 transition-all">
+                  <a href="https://wa.me/254103390866?text=Hi, I'd like to know more about German classes at Lakeview German School" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#25D366]/30 transition-all">
                     <div className="w-12 h-12 rounded-xl bg-[#25D366]/10 text-[#25D366] flex items-center justify-center shrink-0">
                       <MessageCircle size={24} />
                     </div>
                     <div className="flex-1">
                       <p className="text-sm font-bold text-slate-500 uppercase tracking-wider">WhatsApp</p>
-                      <p className="text-lg font-bold text-[#0D2752]">0702 562 730</p>
+                      <p className="text-lg font-bold text-[#0D2752]">0103 390 866</p>
                     </div>
                     <ArrowUpRight className="text-slate-300 group-hover:text-[#25D366] transition-colors" />
                   </a>

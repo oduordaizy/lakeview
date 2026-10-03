@@ -88,25 +88,25 @@ export default function Home() {
       <PremiumHero />
 
       {/* ================= OUR STORY ================= */}
-      <section className="py-24 lg:py-32 bg-[#FDFDFD]">
+      <section className="py-16 lg:py-20 bg-[#FDFDFD]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
               <p className="text-sm font-medium tracking-wide text-[#0367B4] mb-4">
                 Our story
               </p>
               <h2
-                className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-[#0D2752] mb-6"
+                className="font-serif text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight text-[#0D2752] mb-5"
                 style={{ fontFamily: "'Fraunces', Georgia, serif" }}
               >
                 Learning German is a pathway, not just a subject.
               </h2>
-              <p className="text-slate-600 leading-relaxed text-lg font-light mb-6">
+              <p className="text-slate-600 leading-relaxed text-base font-light mb-4">
                 Lakeview German School started in Kisumu with a simple belief:
                 that German should open doors to education, employment, and a
                 different future — not just fill a classroom.
               </p>
-              <p className="text-slate-600 leading-relaxed text-lg font-light mb-8">
+              <p className="text-slate-600 leading-relaxed text-base font-light mb-6">
                 Today we teach learners online across the world and in person on Oginga Odinga Street, Kisumu,
                 carrying every student from their first word to B2 fluency.
               </p>
@@ -145,14 +145,14 @@ export default function Home() {
       </section>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <section className="py-24 lg:py-32 bg-white border-y border-slate-100">
+      <section className="py-16 lg:py-20 bg-white border-y border-slate-100">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-2xl mb-16">
+          <div className="max-w-2xl mb-12">
             <p className="text-sm font-medium tracking-wide text-[#0367B4] mb-4">
               Why Lakeview
             </p>
             <h2
-              className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-[#0D2752]"
+              className="font-serif text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight text-[#0D2752]"
               style={{ fontFamily: "'Fraunces', Georgia, serif" }}
             >
               Built around what actually gets you to Germany.
@@ -167,7 +167,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="bg-white p-8 flex flex-col"
+                className="bg-white p-6 flex flex-col"
               >
                 <feature.icon size={24} className="text-[#0367B4] mb-6" />
                 <h3 className="text-base font-semibold text-[#0D2752] mb-2 leading-snug">
@@ -183,20 +183,20 @@ export default function Home() {
       </section>
 
       {/* ================= IN THE CLASSROOM ================= */}
-      <section className="relative py-24 lg:py-32 bg-[#0D2752] overflow-hidden">
+      <section className="relative py-16 lg:py-20 bg-[#0D2752] overflow-hidden">
         <div className="pointer-events-none absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 order-2 lg:order-1">
-              <Quote size={36} className="text-[#2795D3] mb-6" />
+              <Quote size={32} className="text-[#2795D3] mb-5" />
               <p
-                className="font-serif text-2xl sm:text-3xl leading-snug text-white mb-6"
+                className="font-serif text-xl sm:text-2xl leading-snug text-white mb-5"
                 style={{ fontFamily: "'Fraunces', Georgia, serif" }}
               >
                 Every class is built around real conversation — not just
                 grammar on a page.
               </p>
-              <p className="text-slate-300 leading-relaxed font-light mb-8">
+              <p className="text-slate-300 leading-relaxed font-light mb-6 text-base">
                 Whether you join us online from Narok or Mombasa, or in
                 person in Kisumu, our instructors teach for confidence first
                 — because that's what carries you through an interview, an
@@ -228,15 +228,15 @@ export default function Home() {
       </section>
 
       {/* ================= PROGRAM LEVELS STRIP ================= */}
-      <section className="py-20 bg-[#EAF4FB]">
+      <section className="py-16 bg-[#EAF4FB]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
             <div>
               <p className="text-sm font-medium tracking-wide text-[#0367B4] mb-3">
                 Your path to B2
               </p>
               <h2
-                className="font-serif text-3xl sm:text-4xl leading-tight text-[#0D2752]"
+                className="font-serif text-2xl sm:text-3xl leading-tight text-[#0D2752]"
                 style={{ fontFamily: "'Fraunces', Georgia, serif" }}
               >
                 Four levels. Eight months. One clear goal.
@@ -270,15 +270,15 @@ export default function Home() {
       <TeamSection />
 
       {/* ================= STUDENT LIFE ================= */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
             <div className="max-w-xl">
               <p className="text-sm font-medium tracking-wide text-[#0367B4] mb-3">
                 Student life
               </p>
               <h2
-                className="font-serif text-3xl sm:text-4xl leading-tight text-[#0D2752]"
+                className="font-serif text-2xl sm:text-3xl leading-tight text-[#0D2752]"
                 style={{ fontFamily: "'Fraunces', Georgia, serif" }}
               >
                 Join our growing community.
@@ -328,10 +328,10 @@ export default function Home() {
             Your Germany journey starts here.
           </h2>
           <p className="text-slate-300 mb-9 font-light">
-            Call or WhatsApp us: 0702 562 730 · 0103 390 866
+            Call or WhatsApp us: 0103 390 866
           </p>
           <a
-            href="https://wa.me/254702562730?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20German%20classes%20at%20Lakeview%20German%20School"
+            href="https://wa.me/254103390866?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20German%20classes%20at%20Lakeview%20German%20School"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#D6001C] text-white font-semibold shadow-lg shadow-[#D6001C]/25 hover:bg-[#b50018] transition-all"

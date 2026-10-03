@@ -22,7 +22,7 @@ export default function AboutPage() {
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-24 bg-[#0D2752] text-white overflow-hidden">
+      <section className="relative pt-12 pb-12 lg:pt-16 lg:pb-16 bg-[#0D2752] text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0367B4]/30 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#D6001C]/20 rounded-full blur-[100px] pointer-events-none"></div>
@@ -40,7 +40,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 leading-tight"
+            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-5 leading-tight"
           >
             Our Story, Vision, <br className="hidden md:block"/> and Values
           </motion.h1>
@@ -48,7 +48,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto"
+            className="text-sm sm:text-base lg:text-lg text-slate-300 max-w-2xl mx-auto"
           >
             Empowering learners to speak German with confidence since our founding
           </motion.p>
@@ -56,9 +56,9 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-16 lg:py-24 bg-white relative">
+      <section className="py-12 lg:py-16 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -66,8 +66,8 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
             >
               <span className="text-sm font-bold uppercase tracking-wider text-[#0367B4] mb-2 block">Our Story</span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0D2752] mb-6">Why Lakeview <br/> German School</h2>
-              <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#0D2752] mb-5">Why Lakeview <br/> German School</h2>
+              <div className="space-y-4 text-base text-slate-600 leading-relaxed">
                 <p>
                   Lakeview German School was founded with a clear mission: to make quality German language education accessible to learners in Kenya and beyond. We chose Kisumu as our home base because of its strategic location and vibrant community, but our reach extends far beyond through our online programs.
                 </p>
@@ -92,9 +92,9 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-16 lg:py-24 bg-slate-50 border-y border-slate-200">
+      <section className="py-12 lg:py-16 bg-slate-50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12">
             
             <motion.div 
               initial={{ opacity: 0, y: 30 }}

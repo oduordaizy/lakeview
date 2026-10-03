@@ -36,7 +36,7 @@ export default function GalleryPage() {
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-24 bg-[#0D2752] text-white overflow-hidden">
+      <section className="relative pt-12 pb-12 lg:pt-16 lg:pb-16 bg-[#0D2752] text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0367B4]/30 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -53,7 +53,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6"
+            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-5"
           >
             See Our Students <br className="hidden md:block"/> in Action
           </motion.h1>
@@ -61,7 +61,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto"
+            className="text-sm sm:text-base lg:text-lg text-slate-300 max-w-2xl mx-auto"
           >
             From online classes to graduation celebrations, witness the Lakeview learning journey
           </motion.p>
@@ -69,7 +69,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Filter Tabs */}
-      <section className="py-12 relative z-20">
+      <section className="py-10 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-4">
             {categories.map((category) => {
@@ -95,9 +95,9 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-12 lg:py-20">
+      <section className="py-10 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence>
               {filteredItems.map((item) => (
                 <motion.div 

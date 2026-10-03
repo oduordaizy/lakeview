@@ -18,7 +18,7 @@ export default function ProgramsPage() {
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-24 bg-[#0D2752] text-white overflow-hidden">
+      <section className="relative pt-12 pb-12 lg:pt-16 lg:pb-16 bg-[#0D2752] text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0367B4]/20 rounded-full blur-[100px] pointer-events-none"></div>
         
@@ -35,7 +35,7 @@ export default function ProgramsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6"
+            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-5"
           >
             Choose the Learning Format <br className="hidden md:block"/> That Fits Your Life
           </motion.h1>
@@ -43,7 +43,7 @@ export default function ProgramsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto"
+            className="text-sm sm:text-base lg:text-lg text-slate-300 max-w-2xl mx-auto"
           >
             Online from anywhere, or in person in Kisumu
           </motion.p>
@@ -51,9 +51,9 @@ export default function ProgramsPage() {
       </section>
 
       {/* Comparison Cards */}
-      <section className="py-16 lg:py-24 relative z-20 -mt-10">
+      <section className="py-12 lg:py-16 relative z-20 -mt-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Online Classes Card */}
             <motion.div 
@@ -61,14 +61,14 @@ export default function ProgramsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-[2rem] p-8 sm:p-10 shadow-soft border border-slate-100 flex flex-col hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-[2rem] p-6 sm:p-8 shadow-soft border border-slate-100 flex flex-col hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-16 h-16 rounded-2xl bg-[#EAF4FB] text-[#0367B4] flex items-center justify-center mb-8">
-                <Globe size={32} />
+              <div className="w-14 h-14 rounded-2xl bg-[#EAF4FB] text-[#0367B4] flex items-center justify-center mb-6">
+                <Globe size={28} />
               </div>
-              <h2 className="text-3xl font-extrabold text-[#0D2752] mb-2">Online Classes</h2>
+              <h2 className="text-2xl font-extrabold text-[#0D2752] mb-2">Online Classes</h2>
               <div className="text-4xl font-black text-[#0367B4] mb-8">
-                KES 10,000 <span className="text-lg font-medium text-slate-500">/month</span>
+                KES 10,000 <span className="text-base font-medium text-slate-500">/month</span>
               </div>
               
               <div className="space-y-4 mb-8 flex-1">
